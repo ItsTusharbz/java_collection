@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Collections Method Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .method-card {
+            transition: all 0.2s ease;
+        }
+        .method-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tab-button {
+            transition: all 0.2s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .example-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+        .example-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .example-content.expanded {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg sticky top-0 z-40">
+            <div class="container mx-auto px-4 py-6">
+                <h1 class="text-3xl font-bold mb-4">☕ Java Collections Method Library</h1>
+                <div class="flex gap-3">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search methods by name or description..." 
+                        class="flex-1 px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                    />
+                    <button 
+                        id="addMethodBtn" 
+                        class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-lg font-semibold transition"
+                    >
+                        + Add Method
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container mx-auto px-4 py-6">
+            <div class="mb-6 flex flex-wrap gap-2" id="filterTabs">
+                <button class="tab-button active px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300" data-filter="all">
+                    All
+                </button>
+            </div>
+
+            <div id="collectionsContainer" class="space-y-8">
+            </div>
+        </div>
+    </div>
+
+    <div id="addMethodModal" class="modal">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-2xl w-full mx-4">
+            <h2 class="text-2xl font-bold mb-4">Add New Method</h2>
+            <form id="addMethodForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Collection Type</label>
+                    <select id="methodType" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Select a type...</option>
+                        <option value="List">List</option>
+                        <option value="Set">Set</option>
+                        <option value="Map">Map</option>
+                        <option value="Queue">Queue</option>
+                        <option value="Deque">Deque</option>
+                        <option value="Iterator">Iterator</option>
+                        <option value="Collections">Collections</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Origin (Interface or Specific Class)</label>
+                    <input type="text" id="methodOrigin" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., Interface, ArrayList, BlockingQueue">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Method Name</label>
+                    <input type="text" id="methodName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., add">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Method Signature</label>
+                    <input type="text" id="methodSignature" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., boolean add(E e)">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Return Type</label>
+                    <input type="text" id="methodReturnType" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., boolean">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <textarea id="methodDescription" required rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Describe what this method does..."></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Example Code (optional)</label>
+                    <textarea id="methodExample" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm" placeholder="e.g., List<String> list = new ArrayList<>();\nlist.add(\"Item\");"></textarea>
+                </div>
+                <div class="flex gap-3 pt-4">
+                    <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition">
+                        Add Method
+                    </button>
+                    <button type="button" id="cancelBtn" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded-lg font-semibold transition">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let collectionsData = { collections: [] };
+        let currentFilter = 'all';
+
+        const typeColors = {
+            'List': 'bg-blue-100 text-blue-800',
+            'Set': 'bg-green-100 text-green-800',
+            'Map': 'bg-purple-100 text-purple-800',
+            'Queue': 'bg-yellow-100 text-yellow-800',
+            'Deque': 'bg-orange-100 text-orange-800',
+            'Iterator': 'bg-pink-100 text-pink-800',
+            'Collections': 'bg-indigo-100 text-indigo-800'
+        };
+
+        const originColors = {
+            'Interface': 'bg-gray-100 text-gray-800',
+            'Utility Class': 'bg-indigo-100 text-indigo-800',
+            'ArrayList': 'bg-blue-200 text-blue-900',
+            'LinkedList': 'bg-cyan-300 text-cyan-950',
+            'Vector': 'bg-blue-300 text-blue-950',
+            'Stack': 'bg-blue-400 text-white',
+            'HashSet': 'bg-green-200 text-green-900',
+            'LinkedHashSet': 'bg-emerald-200 text-emerald-900',
+            'TreeSet': 'bg-green-300 text-green-950',
+            'NavigableSet': 'bg-teal-300 text-teal-950',
+            'HashMap': 'bg-purple-200 text-purple-900',
+            'TreeMap': 'bg-purple-300 text-purple-950',
+            'Hashtable': 'bg-purple-400 text-white',
+            'PriorityQueue': 'bg-yellow-200 text-yellow-900',
+            'ArrayDeque': 'bg-orange-200 text-orange-900',
+            'CopyOnWriteArrayList': 'bg-blue-500 text-white',
+            'CopyOnWriteArraySet': 'bg-green-500 text-white',
+            'ConcurrentSkipListSet': 'bg-emerald-500 text-white',
+            'BlockingQueue': 'bg-yellow-500 text-yellow-950',
+            'TransferQueue': 'bg-yellow-600 text-white',
+            'BlockingDeque': 'bg-orange-500 text-white'
+        };
+
+        async function loadData() {
+            try {
+                const response = await fetch('data.json');
+                const jsonData = await response.json();
+                
+                const savedMethods = localStorage.getItem('customMethods');
+                if (savedMethods) {
+                    const customMethods = JSON.parse(savedMethods);
+                    jsonData.collections = mergeCustomMethods(jsonData.collections, customMethods);
+                }
+                
+                collectionsData = jsonData;
+                initializeTabs();
+                renderCollections();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                collectionsData = { collections: [] };
+                renderCollections();
+            }
+        }
+
+        function mergeCustomMethods(baseCollections, customMethods) {
+            const merged = JSON.parse(JSON.stringify(baseCollections));
+            
+            customMethods.forEach(custom => {
+                const collection = merged.find(c => c.type === custom.type);
+                if (collection) {
+                    collection.methods.push(custom.method);
+                } else {
+                    merged.push({
+                        type: custom.type,
+                        implementations: [],
+                        methods: [custom.method]
+                    });
+                }
+            });
+            
+            return merged;
+        }
+
+        function initializeTabs() {
+            const tabsContainer = document.getElementById('filterTabs');
+            const existingTabs = tabsContainer.querySelectorAll('[data-filter]:not([data-filter="all"])');
+            existingTabs.forEach(tab => tab.remove());
+            
+            collectionsData.collections.forEach(collection => {
+                const button = document.createElement('button');
+                button.className = 'tab-button px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300';
+                button.setAttribute('data-filter', collection.type);
+                button.textContent = collection.type;
+                tabsContainer.appendChild(button);
+            });
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    button.classList.add('active');
+                    currentFilter = button.getAttribute('data-filter');
+                    renderCollections();
+                });
+            });
+        }
+
+        function renderCollections() {
+            const container = document.getElementById('collectionsContainer');
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            container.innerHTML = '';
+            
+            let filteredCollections = collectionsData.collections;
+            if (currentFilter !== 'all') {
+                filteredCollections = collectionsData.collections.filter(c => c.type === currentFilter);
+            }
+            
+            filteredCollections.forEach(collection => {
+                let filteredMethods = collection.methods;
+                
+                if (searchTerm) {
+                    filteredMethods = collection.methods.filter(method => 
+                        method.name.toLowerCase().includes(searchTerm) ||
+                        method.signature.toLowerCase().includes(searchTerm) ||
+                        method.description.toLowerCase().includes(searchTerm)
+                    );
+                }
+                
+                if (filteredMethods.length === 0) return;
+                
+                const section = document.createElement('div');
+                section.className = 'bg-white rounded-lg shadow-md p-6';
+                
+                const header = document.createElement('div');
+                header.className = 'mb-4 pb-3 border-b border-gray-200';
+                header.innerHTML = `
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">${collection.type}</h2>
+                    <p class="text-sm text-gray-600">Implementations: ${collection.implementations.join(', ')}</p>
+                    <p class="text-sm text-gray-500 mt-1">${filteredMethods.length} method${filteredMethods.length !== 1 ? 's' : ''}</p>
+                `;
+                section.appendChild(header);
+                
+                const methodsGrid = document.createElement('div');
+                methodsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4';
+                
+                filteredMethods.forEach((method, idx) => {
+                    const card = document.createElement('div');
+                    card.className = 'method-card bg-gray-50 border border-gray-200 rounded-lg p-4';
+                    const exampleId = `example-${collection.type}-${idx}`;
+                    const example = method.example || generateExample(method, collection.type);
+                    const origin = method.origin || 'Interface';
+                    const originColor = originColors[origin] || 'bg-gray-100 text-gray-800';
+                    
+                    card.innerHTML = `
+                        <div class="flex items-start justify-between mb-2">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-800">${method.name}</h3>
+                                <span class="badge ${originColor} text-[10px] py-0 px-2 mt-1">${origin}</span>
+                            </div>
+                            <span class="badge ${typeColors[collection.type]}">${collection.type}</span>
+                        </div>
+                        <code class="block text-xs bg-gray-800 text-green-400 p-2 rounded mb-3 overflow-x-auto">
+                            ${escapeHtml(method.signature)}
+                        </code>
+                        <p class="text-sm text-gray-600 mb-2">${escapeHtml(method.description)}</p>
+                        <div class="text-xs text-gray-500 mt-2 mb-3">
+                            <span class="font-semibold">Returns:</span> <code class="bg-gray-200 px-1 rounded">${escapeHtml(method.returnType)}</code>
+                        </div>
+                        <div class="border-t border-gray-300 pt-3">
+                            <div class="example-toggle flex items-center justify-between text-sm font-semibold text-blue-600 hover:text-blue-800" data-target="${exampleId}">
+                                <span>📝 Example</span>
+                                <span class="toggle-icon">▼</span>
+                            </div>
+                            <div id="${exampleId}" class="example-content mt-2">
+                                <pre class="text-xs bg-gray-900 text-green-300 p-3 rounded overflow-x-auto"><code>${escapeHtml(example)}</code></pre>
+                            </div>
+                        </div>
+                    `;
+                    
+                    methodsGrid.appendChild(card);
+                });
+                
+                section.appendChild(methodsGrid);
+                container.appendChild(section);
+            });
+            
+            if (container.children.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12">
+                        <p class="text-gray-500 text-lg">No methods found matching your search.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function generateExample(method, collectionType) {
+            const examples = {
+                'List': {
+                    'add': 'List<String> list = new ArrayList<>();\nlist.add("Apple");\nlist.add("Banana");\n// list: [Apple, Banana]',
+                    'get': 'List<String> list = Arrays.asList("A", "B", "C");\nString item = list.get(1);\n// item: "B"',
+                    'remove': 'List<String> list = new ArrayList<>(Arrays.asList("A", "B"));\nlist.remove("B");\n// list: [A]',
+                    'size': 'List<String> list = Arrays.asList("A", "B", "C");\nint count = list.size();\n// count: 3',
+                    'clear': 'List<String> list = new ArrayList<>();\nlist.add("Apple");\nlist.clear();\n// list: []',
+                    'contains': 'List<String> list = Arrays.asList("A", "B");\nboolean has = list.contains("A");\n// has: true'
+                },
+                'Set': {
+                    'add': 'Set<String> set = new HashSet<>();\nset.add("Apple");\nset.add("Apple");\n// set: [Apple] (no duplicates)',
+                    'remove': 'Set<String> set = new HashSet<>(Arrays.asList("A", "B"));\nset.remove("A");\n// set: [B]',
+                    'contains': 'Set<String> set = new HashSet<>(Arrays.asList("A", "B"));\nboolean has = set.contains("A");\n// has: true',
+                    'size': 'Set<String> set = new HashSet<>(Arrays.asList("A", "B"));\nint count = set.size();\n// count: 2'
+                },
+                'Map': {
+                    'put': 'Map<String, Integer> map = new HashMap<>();\nmap.put("A", 1);\nmap.put("B", 2);\n// map: {A=1, B=2}',
+                    'get': 'Map<String, Integer> map = new HashMap<>();\nmap.put("A", 1);\nInteger val = map.get("A");\n// val: 1',
+                    'remove': 'Map<String, Integer> map = new HashMap<>();\nmap.put("A", 1);\nmap.remove("A");\n// map: {}',
+                    'containsKey': 'Map<String, Integer> map = new HashMap<>();\nmap.put("A", 1);\nboolean has = map.containsKey("A");\n// has: true',
+                    'size': 'Map<String, Integer> map = new HashMap<>();\nmap.put("A", 1);\nint count = map.size();\n// count: 1'
+                },
+                'Queue': {
+                    'offer': 'Queue<String> queue = new LinkedList<>();\nqueue.offer("First");\nqueue.offer("Second");\n// queue: [First, Second]',
+                    'poll': 'Queue<String> queue = new LinkedList<>();\nqueue.add("First");\nString item = queue.poll();\n// item: "First"',
+                    'peek': 'Queue<String> queue = new LinkedList<>();\nqueue.add("First");\nString item = queue.peek();\n// item: "First"'
+                },
+                'Deque': {
+                    'addFirst': 'Deque<String> deque = new ArrayDeque<>();\ndeque.addFirst("First");\ndeque.addFirst("New First");\n// deque: [New First, First]',
+                    'addLast': 'Deque<String> deque = new ArrayDeque<>();\ndeque.addLast("First");\ndeque.addLast("Last");\n// deque: [First, Last]',
+                    'push': 'Deque<String> stack = new ArrayDeque<>();\nstack.push("First");\nstack.push("Second");\n// stack: [Second, First]',
+                    'pop': 'Deque<String> stack = new ArrayDeque<>();\nstack.push("First");\nString top = stack.pop();\n// top: "First"'
+                },
+                'Iterator': {
+                    'hasNext': 'Iterator<String> it = list.iterator();\nboolean has = it.hasNext();\n// has: true',
+                    'next': 'Iterator<String> it = list.iterator();\nString elem = it.next();\n// elem: first element'
+                },
+                'Collections': {
+                    'sort': 'List<Integer> list = new ArrayList<>(Arrays.asList(3, 1, 2));\nCollections.sort(list);\n// list: [1, 2, 3]',
+                    'reverse': 'List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.reverse(list);\n// list: [3, 2, 1]',
+                    'shuffle': 'List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.shuffle(list);\n// list: random order',
+                    'min': 'List<Integer> list = Arrays.asList(3, 1, 2);\nInteger min = Collections.min(list);\n// min: 1',
+                    'max': 'List<Integer> list = Arrays.asList(3, 1, 2);\nInteger max = Collections.max(list);\n// max: 3'
+                }
+            };
+            
+            if (examples[collectionType] && examples[collectionType][method.name]) {
+                return examples[collectionType][method.name];
+            }
+            
+            return `// Example for ${method.name}\n${collectionType} collection = new ${collectionType}<>();\ncollection.${method.name}();`;
+        }
+
+        document.getElementById('searchInput').addEventListener('input', renderCollections);
+
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.example-toggle')) {
+                const toggle = e.target.closest('.example-toggle');
+                const targetId = toggle.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const icon = toggle.querySelector('.toggle-icon');
+                
+                if (content.classList.contains('expanded')) {
+                    content.classList.remove('expanded');
+                    icon.textContent = '▼';
+                } else {
+                    content.classList.add('expanded');
+                    icon.textContent = '▲';
+                }
+            }
+        });
+
+        const modal = document.getElementById('addMethodModal');
+        const addMethodBtn = document.getElementById('addMethodBtn');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const addMethodForm = document.getElementById('addMethodForm');
+
+        addMethodBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            addMethodForm.reset();
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                addMethodForm.reset();
+            }
+        });
+
+        addMethodForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const exampleValue = document.getElementById('methodExample').value;
+            const newMethod = {
+                type: document.getElementById('methodType').value,
+                method: {
+                    name: document.getElementById('methodName').value,
+                    signature: document.getElementById('methodSignature').value,
+                    description: document.getElementById('methodDescription').value,
+                    returnType: document.getElementById('methodReturnType').value,
+                    example: exampleValue || undefined,
+                    origin: document.getElementById('methodOrigin').value
+                }
+            };
+            
+            let customMethods = [];
+            const saved = localStorage.getItem('customMethods');
+            if (saved) {
+                customMethods = JSON.parse(saved);
+            }
+            customMethods.push(newMethod);
+            localStorage.setItem('customMethods', JSON.stringify(customMethods));
+            
+            const collection = collectionsData.collections.find(c => c.type === newMethod.type);
+            if (collection) {
+                collection.methods.push(newMethod.method);
+            } else {
+                collectionsData.collections.push({
+                    type: newMethod.type,
+                    implementations: [],
+                    methods: [newMethod.method]
+                });
+            }
+            
+            initializeTabs();
+            renderCollections();
+            
+            modal.classList.remove('active');
+            addMethodForm.reset();
+            
+            alert('Method added successfully!');
+        });
+
+        loadData();
+    </script>
+</body>
+</html>

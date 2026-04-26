@@ -1,0 +1,1517 @@
+{
+  "collections": [
+    {
+      "type": "List",
+      "implementations": ["ArrayList", "LinkedList", "Vector", "Stack", "CopyOnWriteArrayList"],
+      "methods": [
+        {
+          "name": "add",
+          "signature": "boolean add(E e)",
+          "description": "Appends the specified element to the end of this list. Returns true if the list changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface",
+          "example": "List<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.add(\"Banana\");\n// list: [Apple, Banana]"
+        },
+        {
+          "name": "add",
+          "signature": "void add(int index, E element)",
+          "description": "Inserts the specified element at the specified position in this list. Shifts the element currently at that position and any subsequent elements to the right.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "addAll",
+          "signature": "boolean addAll(Collection<? extends E> c)",
+          "description": "Appends all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's iterator.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "addAll",
+          "signature": "boolean addAll(int index, Collection<? extends E> c)",
+          "description": "Inserts all of the elements in the specified collection into this list at the specified position. Shifts the element currently at that position and any subsequent elements to the right.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "clear",
+          "signature": "void clear()",
+          "description": "Removes all of the elements from this list. The list will be empty after this call returns.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "contains",
+          "signature": "boolean contains(Object o)",
+          "description": "Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that Objects.equals(o, e).",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "containsAll",
+          "signature": "boolean containsAll(Collection<?> c)",
+          "description": "Returns true if this list contains all of the elements of the specified collection.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "equals",
+          "signature": "boolean equals(Object o)",
+          "description": "Compares the specified object with this list for equality. Returns true if and only if the specified object is also a list, both lists have the same size, and all corresponding pairs of elements in the two lists are equal.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "get",
+          "signature": "E get(int index)",
+          "description": "Returns the element at the specified position in this list. Throws IndexOutOfBoundsException if the index is out of range.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "hashCode",
+          "signature": "int hashCode()",
+          "description": "Returns the hash code value for this list. The hash code is calculated based on the hash codes of the elements in the list.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "indexOf",
+          "signature": "int indexOf(Object o)",
+          "description": "Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "isEmpty",
+          "signature": "boolean isEmpty()",
+          "description": "Returns true if this list contains no elements.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "iterator",
+          "signature": "Iterator<E> iterator()",
+          "description": "Returns an iterator over the elements in this list in proper sequence.",
+          "returnType": "Iterator<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "lastIndexOf",
+          "signature": "int lastIndexOf(Object o)",
+          "description": "Returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "listIterator",
+          "signature": "ListIterator<E> listIterator()",
+          "description": "Returns a list iterator over the elements in this list (in proper sequence).",
+          "returnType": "ListIterator<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "listIterator",
+          "signature": "ListIterator<E> listIterator(int index)",
+          "description": "Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position in the list.",
+          "returnType": "ListIterator<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "E remove(int index)",
+          "description": "Removes the element at the specified position in this list. Shifts any subsequent elements to the left. Returns the element that was removed from the list.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "boolean remove(Object o)",
+          "description": "Removes the first occurrence of the specified element from this list, if it is present. Returns true if this list contained the specified element.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeAll",
+          "signature": "boolean removeAll(Collection<?> c)",
+          "description": "Removes from this list all of its elements that are contained in the specified collection. Returns true if this list changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "retainAll",
+          "signature": "boolean retainAll(Collection<?> c)",
+          "description": "Retains only the elements in this list that are contained in the specified collection. Removes all other elements. Returns true if this list changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "set",
+          "signature": "E set(int index, E element)",
+          "description": "Replaces the element at the specified position in this list with the specified element. Returns the element previously at the specified position.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "size",
+          "signature": "int size()",
+          "description": "Returns the number of elements in this list.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "subList",
+          "signature": "List<E> subList(int fromIndex, int toIndex)",
+          "description": "Returns a view of the portion of this list between the specified fromIndex (inclusive) and toIndex (exclusive). Changes to the returned list are reflected in this list, and vice-versa.",
+          "returnType": "List<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "toArray",
+          "signature": "Object[] toArray()",
+          "description": "Returns an array containing all of the elements in this list in proper sequence (from first to last element).",
+          "returnType": "Object[]",
+          "origin": "Interface"
+        },
+        {
+          "name": "toArray",
+          "signature": "<T> T[] toArray(T[] a)",
+          "description": "Returns an array containing all of the elements in this list in proper sequence; the runtime type of the returned array is that of the specified array.",
+          "returnType": "T[]",
+          "origin": "Interface"
+        },
+        {
+          "name": "replaceAll",
+          "signature": "void replaceAll(UnaryOperator<E> operator)",
+          "description": "Replaces each element of this list with the result of applying the operator to that element. Errors or runtime exceptions thrown by the operator are relayed to the caller.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "sort",
+          "signature": "void sort(Comparator<? super E> c)",
+          "description": "Sorts this list according to the order induced by the specified Comparator. All elements in this list must be mutually comparable using the specified comparator.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "trimToSize",
+          "signature": "void trimToSize()",
+          "description": "Trims the capacity of this ArrayList instance to be the list's current size.",
+          "returnType": "void",
+          "origin": "ArrayList"
+        },
+        {
+          "name": "ensureCapacity",
+          "signature": "void ensureCapacity(int minCapacity)",
+          "description": "Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.",
+          "returnType": "void",
+          "origin": "ArrayList"
+        },
+        {
+          "name": "getFirst",
+          "signature": "E getFirst()",
+          "description": "Returns the first element in this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "getLast",
+          "signature": "E getLast()",
+          "description": "Returns the last element in this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "removeFirst",
+          "signature": "E removeFirst()",
+          "description": "Removes and returns the first element from this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "removeLast",
+          "signature": "E removeLast()",
+          "description": "Removes and returns the last element from this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "addFirst",
+          "signature": "void addFirst(E e)",
+          "description": "Inserts the specified element at the beginning of this list.",
+          "returnType": "void",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "addLast",
+          "signature": "void addLast(E e)",
+          "description": "Appends the specified element to the end of this list.",
+          "returnType": "void",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "offer",
+          "signature": "boolean offer(E e)",
+          "description": "Adds the specified element as the tail (last element) of this list.",
+          "returnType": "boolean",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "poll",
+          "signature": "E poll()",
+          "description": "Retrieves and removes the head (first element) of this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "peek",
+          "signature": "E peek()",
+          "description": "Retrieves, but does not remove, the head (first element) of this list.",
+          "returnType": "E",
+          "origin": "LinkedList"
+        },
+        {
+          "name": "addElement",
+          "signature": "void addElement(E obj)",
+          "description": "Adds the specified component to the end of this vector, increasing its size by one. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "capacity",
+          "signature": "int capacity()",
+          "description": "Returns the current capacity of this vector.",
+          "returnType": "int",
+          "origin": "Vector"
+        },
+        {
+          "name": "copyInto",
+          "signature": "void copyInto(Object[] anArray)",
+          "description": "Copies the components of this vector into the specified array.",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "elements",
+          "signature": "Enumeration<E> elements()",
+          "description": "Returns an enumeration of the components of this vector.",
+          "returnType": "Enumeration<E>",
+          "origin": "Vector"
+        },
+        {
+          "name": "elementAt",
+          "signature": "E elementAt(int index)",
+          "description": "Returns the component at the specified index. (Legacy method)",
+          "returnType": "E",
+          "origin": "Vector"
+        },
+        {
+          "name": "firstElement",
+          "signature": "E firstElement()",
+          "description": "Returns the first component (the item at index 0) of this vector. (Legacy method)",
+          "returnType": "E",
+          "origin": "Vector"
+        },
+        {
+          "name": "lastElement",
+          "signature": "E lastElement()",
+          "description": "Returns the last component of the vector. (Legacy method)",
+          "returnType": "E",
+          "origin": "Vector"
+        },
+        {
+          "name": "removeElementAt",
+          "signature": "void removeElementAt(int index)",
+          "description": "Deletes the component at the specified index. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "removeAllElements",
+          "signature": "void removeAllElements()",
+          "description": "Removes all components from this vector and sets its size to zero. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "setElementAt",
+          "signature": "void setElementAt(E obj, int index)",
+          "description": "Sets the component at the specified index of this vector to be the specified object. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "insertElementAt",
+          "signature": "void insertElementAt(E obj, int index)",
+          "description": "Inserts the specified object as a component in this vector at the specified index. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "setSize",
+          "signature": "void setSize(int newSize)",
+          "description": "Sets the size of this vector. (Legacy method)",
+          "returnType": "void",
+          "origin": "Vector"
+        },
+        {
+          "name": "push",
+          "signature": "E push(E item)",
+          "description": "Pushes an item onto the top of this stack.",
+          "returnType": "E",
+          "origin": "Stack"
+        },
+        {
+          "name": "pop",
+          "signature": "E pop()",
+          "description": "Removes the object at the top of this stack and returns that object as the value of this function.",
+          "returnType": "E",
+          "origin": "Stack"
+        },
+        {
+          "name": "peek",
+          "signature": "E peek()",
+          "description": "Looks at the object at the top of this stack without removing it from the stack.",
+          "returnType": "E",
+          "origin": "Stack"
+        },
+        {
+          "name": "empty",
+          "signature": "boolean empty()",
+          "description": "Tests if this stack is empty.",
+          "returnType": "boolean",
+          "origin": "Stack"
+        },
+        {
+          "name": "search",
+          "signature": "int search(Object o)",
+          "description": "Returns the 1-based position where an object is on this stack.",
+          "returnType": "int",
+          "origin": "Stack"
+        },
+        {
+          "name": "addIfAbsent",
+          "signature": "boolean addIfAbsent(E e)",
+          "description": "Appends the element, if not present.",
+          "returnType": "boolean",
+          "origin": "CopyOnWriteArrayList"
+        },
+        {
+          "name": "addAllAbsent",
+          "signature": "int addAllAbsent(Collection<? extends E> c)",
+          "description": "Appends all of the elements in the specified collection that are not already contained in this list, in the order that they are returned by the specified collection's iterator.",
+          "returnType": "int",
+          "origin": "CopyOnWriteArrayList"
+        }
+      ]
+    },
+    {
+      "type": "Set",
+      "implementations": ["HashSet", "LinkedHashSet", "TreeSet", "CopyOnWriteArraySet", "ConcurrentSkipListSet"],
+      "methods": [
+        {
+          "name": "add",
+          "signature": "boolean add(E e)",
+          "description": "Adds the specified element to this set if it is not already present. Returns true if this set did not already contain the specified element.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "addAll",
+          "signature": "boolean addAll(Collection<? extends E> c)",
+          "description": "Adds all of the elements in the specified collection to this set if they're not already present. Returns true if this set changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "clear",
+          "signature": "void clear()",
+          "description": "Removes all of the elements from this set. The set will be empty after this call returns.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "contains",
+          "signature": "boolean contains(Object o)",
+          "description": "Returns true if this set contains the specified element. More formally, returns true if and only if this set contains an element e such that Objects.equals(o, e).",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "containsAll",
+          "signature": "boolean containsAll(Collection<?> c)",
+          "description": "Returns true if this set contains all of the elements of the specified collection.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "equals",
+          "signature": "boolean equals(Object o)",
+          "description": "Compares the specified object with this set for equality. Returns true if the specified object is also a set, the two sets have the same size, and every member of the specified set is contained in this set.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "hashCode",
+          "signature": "int hashCode()",
+          "description": "Returns the hash code value for this set. The hash code of a set is defined to be the sum of the hash codes of the elements in the set.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "isEmpty",
+          "signature": "boolean isEmpty()",
+          "description": "Returns true if this set contains no elements.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "iterator",
+          "signature": "Iterator<E> iterator()",
+          "description": "Returns an iterator over the elements in this set. The elements are returned in no particular order (unless this set is an instance of some class that provides a guarantee).",
+          "returnType": "Iterator<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "boolean remove(Object o)",
+          "description": "Removes the specified element from this set if it is present. Returns true if this set contained the specified element.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeAll",
+          "signature": "boolean removeAll(Collection<?> c)",
+          "description": "Removes from this set all of its elements that are contained in the specified collection. Returns true if this set changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "retainAll",
+          "signature": "boolean retainAll(Collection<?> c)",
+          "description": "Retains only the elements in this set that are contained in the specified collection. Returns true if this set changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "size",
+          "signature": "int size()",
+          "description": "Returns the number of elements in this set (its cardinality).",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "toArray",
+          "signature": "Object[] toArray()",
+          "description": "Returns an array containing all of the elements in this set. If this set makes any guarantees as to what order its elements are returned by its iterator, this method must return the elements in the same order.",
+          "returnType": "Object[]",
+          "origin": "Interface"
+        },
+        {
+          "name": "toArray",
+          "signature": "<T> T[] toArray(T[] a)",
+          "description": "Returns an array containing all of the elements in this set; the runtime type of the returned array is that of the specified array.",
+          "returnType": "T[]",
+          "origin": "Interface"
+        },
+        {
+          "name": "first",
+          "signature": "E first()",
+          "description": "Returns the first (lowest) element currently in this set.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "last",
+          "signature": "E last()",
+          "description": "Returns the last (highest) element currently in this set.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "lower",
+          "signature": "E lower(E e)",
+          "description": "Returns the greatest element in this set strictly less than the given element, or null if there is no such element.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "floor",
+          "signature": "E floor(E e)",
+          "description": "Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "ceiling",
+          "signature": "E ceiling(E e)",
+          "description": "Returns the least element in this set greater than or equal to the given element, or null if there is no such element.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "higher",
+          "signature": "E higher(E e)",
+          "description": "Returns the least element in this set strictly greater than the given element, or null if there is no such element.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "pollFirst",
+          "signature": "E pollFirst()",
+          "description": "Retrieves and removes the first (lowest) element, or returns null if this set is empty.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "pollLast",
+          "signature": "E pollLast()",
+          "description": "Retrieves and removes the last (highest) element, or returns null if this set is empty.",
+          "returnType": "E",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "descendingSet",
+          "signature": "NavigableSet<E> descendingSet()",
+          "description": "Returns a reverse order view of the elements contained in this set.",
+          "returnType": "NavigableSet<E>",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "descendingIterator",
+          "signature": "Iterator<E> descendingIterator()",
+          "description": "Returns an iterator over the elements in this set, in descending order.",
+          "returnType": "Iterator<E>",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "subSet",
+          "signature": "NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive)",
+          "description": "Returns a view of the portion of this set whose elements range from fromElement to toElement.",
+          "returnType": "NavigableSet<E>",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "headSet",
+          "signature": "NavigableSet<E> headSet(E toElement, boolean inclusive)",
+          "description": "Returns a view of the portion of this set whose elements are less than (or equal to, if inclusive is true) toElement.",
+          "returnType": "NavigableSet<E>",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "tailSet",
+          "signature": "NavigableSet<E> tailSet(E fromElement, boolean inclusive)",
+          "description": "Returns a view of the portion of this set whose elements are greater than (or equal to, if inclusive is true) fromElement.",
+          "returnType": "NavigableSet<E>",
+          "origin": "NavigableSet"
+        },
+        {
+          "name": "comparator",
+          "signature": "Comparator<? super E> comparator()",
+          "description": "Returns the comparator used to order the elements in this set, or null if this set uses the natural ordering of its elements.",
+          "returnType": "Comparator<? super E>",
+          "origin": "NavigableSet"
+        }
+      ]
+    },
+    {
+      "type": "Map",
+      "implementations": ["HashMap", "LinkedHashMap", "TreeMap", "Hashtable"],
+      "methods": [
+        {
+          "name": "clear",
+          "signature": "void clear()",
+          "description": "Removes all of the mappings from this map. The map will be empty after this call returns.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "containsKey",
+          "signature": "boolean containsKey(Object key)",
+          "description": "Returns true if this map contains a mapping for the specified key. More formally, returns true if and only if this map contains a mapping for a key k such that Objects.equals(key, k).",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "containsValue",
+          "signature": "boolean containsValue(Object value)",
+          "description": "Returns true if this map maps one or more keys to the specified value. More formally, returns true if and only if this map contains at least one mapping to a value v such that Objects.equals(value, v).",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "entrySet",
+          "signature": "Set<Map.Entry<K,V>> entrySet()",
+          "description": "Returns a Set view of the mappings contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa.",
+          "returnType": "Set<Map.Entry<K,V>>",
+          "origin": "Interface"
+        },
+        {
+          "name": "equals",
+          "signature": "boolean equals(Object o)",
+          "description": "Compares the specified object with this map for equality. Returns true if the given object is also a map and the two maps represent the same mappings.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "get",
+          "signature": "V get(Object key)",
+          "description": "Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "getOrDefault",
+          "signature": "V getOrDefault(Object key, V defaultValue)",
+          "description": "Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "hashCode",
+          "signature": "int hashCode()",
+          "description": "Returns the hash code value for this map. The hash code of a map is defined to be the sum of the hash codes of each entry in the map's entrySet() view.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "isEmpty",
+          "signature": "boolean isEmpty()",
+          "description": "Returns true if this map contains no key-value mappings.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "keySet",
+          "signature": "Set<K> keySet()",
+          "description": "Returns a Set view of the keys contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa.",
+          "returnType": "Set<K>",
+          "origin": "Interface"
+        },
+        {
+          "name": "put",
+          "signature": "V put(K key, V value)",
+          "description": "Associates the specified value with the specified key in this map. If the map previously contained a mapping for the key, the old value is replaced. Returns the previous value associated with key, or null if there was no mapping for key.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "putAll",
+          "signature": "void putAll(Map<? extends K,? extends V> m)",
+          "description": "Copies all of the mappings from the specified map to this map. The effect is equivalent to calling put(k, v) on this map once for each mapping from key k to value v in the specified map.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "putIfAbsent",
+          "signature": "V putIfAbsent(K key, V value)",
+          "description": "If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "V remove(Object key)",
+          "description": "Removes the mapping for a key from this map if it is present. Returns the value to which this map previously associated the key, or null if the map contained no mapping for the key.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "boolean remove(Object key, Object value)",
+          "description": "Removes the entry for the specified key only if it is currently mapped to the specified value. Returns true if the value was removed.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "replace",
+          "signature": "V replace(K key, V value)",
+          "description": "Replaces the entry for the specified key only if it is currently mapped to some value. Returns the previous value associated with the specified key, or null if there was no mapping for the key.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "replace",
+          "signature": "boolean replace(K key, V oldValue, V newValue)",
+          "description": "Replaces the entry for the specified key only if currently mapped to the specified value. Returns true if the value was replaced.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "size",
+          "signature": "int size()",
+          "description": "Returns the number of key-value mappings in this map.",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "values",
+          "signature": "Collection<V> values()",
+          "description": "Returns a Collection view of the values contained in this map. The collection is backed by the map, so changes to the map are reflected in the collection, and vice-versa.",
+          "returnType": "Collection<V>",
+          "origin": "Interface"
+        },
+        {
+          "name": "compute",
+          "signature": "V compute(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)",
+          "description": "Attempts to compute a mapping for the specified key and its current mapped value (or null if there is no current mapping). Returns the new value associated with the specified key, or null if none.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "computeIfAbsent",
+          "signature": "V computeIfAbsent(K key, Function<? super K,? extends V> mappingFunction)",
+          "description": "If the specified key is not already associated with a value (or is mapped to null), attempts to compute its value using the given mapping function and enters it into this map unless null.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "computeIfPresent",
+          "signature": "V computeIfPresent(K key, BiFunction<? super K,? super V,? extends V> remappingFunction)",
+          "description": "If the value for the specified key is present and non-null, attempts to compute a new mapping given the key and its current mapped value.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "forEach",
+          "signature": "void forEach(BiConsumer<? super K,? super V> action)",
+          "description": "Performs the given action for each entry in this map until all entries have been processed or the action throws an exception.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "merge",
+          "signature": "V merge(K key, V value, BiFunction<? super V,? super V,? extends V> remappingFunction)",
+          "description": "If the specified key is not already associated with a value or is associated with null, associates it with the given non-null value. Otherwise, replaces the associated value with the results of the given remapping function.",
+          "returnType": "V",
+          "origin": "Interface"
+        },
+        {
+          "name": "replaceAll",
+          "signature": "void replaceAll(BiFunction<? super K,? super V,? extends V> function)",
+          "description": "Replaces each entry's value with the result of invoking the given function on that entry until all entries have been processed or the function throws an exception.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "firstKey",
+          "signature": "K firstKey()",
+          "description": "Returns the first (lowest) key currently in this map.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "lastKey",
+          "signature": "K lastKey()",
+          "description": "Returns the last (highest) key currently in this map.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "firstEntry",
+          "signature": "Map.Entry<K,V> firstEntry()",
+          "description": "Returns a key-value mapping associated with the least key in this map, or null if the map is empty.",
+          "returnType": "Map.Entry<K,V>",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "lastEntry",
+          "signature": "Map.Entry<K,V> lastEntry()",
+          "description": "Returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.",
+          "returnType": "Map.Entry<K,V>",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "pollFirstEntry",
+          "signature": "Map.Entry<K,V> pollFirstEntry()",
+          "description": "Removes and returns a key-value mapping associated with the least key in this map, or null if the map is empty.",
+          "returnType": "Map.Entry<K,V>",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "pollLastEntry",
+          "signature": "Map.Entry<K,V> pollLastEntry()",
+          "description": "Removes and returns a key-value mapping associated with the greatest key in this map, or null if the map is empty.",
+          "returnType": "Map.Entry<K,V>",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "lowerKey",
+          "signature": "K lowerKey(K key)",
+          "description": "Returns the greatest key strictly less than the given key, or null if there is no such key.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "floorKey",
+          "signature": "K floorKey(K key)",
+          "description": "Returns the greatest key less than or equal to the given key, or null if there is no such key.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "ceilingKey",
+          "signature": "K ceilingKey(K key)",
+          "description": "Returns the least key greater than or equal to the given key, or null if there is no such key.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "higherKey",
+          "signature": "K higherKey(K key)",
+          "description": "Returns the least key strictly greater than the given key, or null if there is no such key.",
+          "returnType": "K",
+          "origin": "TreeMap"
+        },
+        {
+          "name": "keys",
+          "signature": "Enumeration<K> keys()",
+          "description": "Returns an enumeration of the keys in this hashtable. (Legacy method)",
+          "returnType": "Enumeration<K>",
+          "origin": "Hashtable"
+        },
+        {
+          "name": "elements",
+          "signature": "Enumeration<V> elements()",
+          "description": "Returns an enumeration of the values in this hashtable. (Legacy method)",
+          "returnType": "Enumeration<V>",
+          "origin": "Hashtable"
+        }
+      ]
+    },
+    {
+      "type": "Queue",
+      "implementations": ["LinkedList", "PriorityQueue", "ArrayDeque", "ArrayBlockingQueue", "LinkedBlockingQueue", "PriorityBlockingQueue", "DelayQueue", "SynchronousQueue", "LinkedTransferQueue", "ConcurrentLinkedQueue"],
+      "methods": [
+        {
+          "name": "add",
+          "signature": "boolean add(E e)",
+          "description": "Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. Returns true upon success and throws an IllegalStateException if no space is currently available.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "element",
+          "signature": "E element()",
+          "description": "Retrieves, but does not remove, the head of this queue. This method differs from peek only in that it throws an exception if this queue is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "offer",
+          "signature": "boolean offer(E e)",
+          "description": "Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. Returns true upon success and false if no space is currently available.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "peek",
+          "signature": "E peek()",
+          "description": "Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "poll",
+          "signature": "E poll()",
+          "description": "Retrieves and removes the head of this queue, or returns null if this queue is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "E remove()",
+          "description": "Retrieves and removes the head of this queue. This method differs from poll only in that it throws an exception if this queue is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "comparator",
+          "signature": "Comparator<? super E> comparator()",
+          "description": "Returns the comparator used to order the elements in this queue, or null if this queue uses the natural ordering of its elements.",
+          "returnType": "Comparator<? super E>",
+          "origin": "PriorityQueue"
+        },
+        {
+          "name": "put",
+          "signature": "void put(E e) throws InterruptedException",
+          "description": "Inserts the specified element into this queue, waiting if necessary for space to become available.",
+          "returnType": "void",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "take",
+          "signature": "E take() throws InterruptedException",
+          "description": "Retrieves and removes the head of this queue, waiting if necessary until an element becomes available.",
+          "returnType": "E",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "remainingCapacity",
+          "signature": "int remainingCapacity()",
+          "description": "Returns the number of additional elements that this queue can ideally accept without blocking, or Integer.MAX_VALUE if there is no intrinsic limit.",
+          "returnType": "int",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "drainTo",
+          "signature": "int drainTo(Collection<? super E> c)",
+          "description": "Removes all available elements from this queue and adds them to the given collection.",
+          "returnType": "int",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "offer",
+          "signature": "boolean offer(E e, long timeout, TimeUnit unit) throws InterruptedException",
+          "description": "Inserts the specified element into this queue, waiting up to the specified wait time if necessary for space to become available.",
+          "returnType": "boolean",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "poll",
+          "signature": "E poll(long timeout, TimeUnit unit) throws InterruptedException",
+          "description": "Retrieves and removes the head of this queue, waiting up to the specified wait time if necessary after an element becomes available.",
+          "returnType": "E",
+          "origin": "BlockingQueue"
+        },
+        {
+          "name": "transfer",
+          "signature": "void transfer(E e) throws InterruptedException",
+          "description": "Transfers the element to a consumer, waiting if necessary to do so.",
+          "returnType": "void",
+          "origin": "TransferQueue"
+        },
+        {
+          "name": "tryTransfer",
+          "signature": "boolean tryTransfer(E e)",
+          "description": "Transfers the element to a waiting consumer immediately, if possible.",
+          "returnType": "boolean",
+          "origin": "TransferQueue"
+        },
+        {
+          "name": "hasWaitingConsumer",
+          "signature": "boolean hasWaitingConsumer()",
+          "description": "Returns true if there is at least one consumer waiting to receive an element via take() or timed poll().",
+          "returnType": "boolean",
+          "origin": "TransferQueue"
+        }
+      ]
+    },
+    {
+      "type": "Deque",
+      "implementations": ["ArrayDeque", "LinkedList", "LinkedBlockingDeque", "ConcurrentLinkedDeque"],
+      "methods": [
+        {
+          "name": "addFirst",
+          "signature": "void addFirst(E e)",
+          "description": "Inserts the specified element at the front of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "addLast",
+          "signature": "void addLast(E e)",
+          "description": "Inserts the specified element at the end of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "offerFirst",
+          "signature": "boolean offerFirst(E e)",
+          "description": "Inserts the specified element at the front of this deque unless it would violate capacity restrictions. Returns true upon success and false if no space is currently available.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "offerLast",
+          "signature": "boolean offerLast(E e)",
+          "description": "Inserts the specified element at the end of this deque unless it would violate capacity restrictions. Returns true upon success and false if no space is currently available.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeFirst",
+          "signature": "E removeFirst()",
+          "description": "Retrieves and removes the first element of this deque. This method differs from pollFirst only in that it throws an exception if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeLast",
+          "signature": "E removeLast()",
+          "description": "Retrieves and removes the last element of this deque. This method differs from pollLast only in that it throws an exception if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "pollFirst",
+          "signature": "E pollFirst()",
+          "description": "Retrieves and removes the first element of this deque, or returns null if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "pollLast",
+          "signature": "E pollLast()",
+          "description": "Retrieves and removes the last element of this deque, or returns null if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "getFirst",
+          "signature": "E getFirst()",
+          "description": "Retrieves, but does not remove, the first element of this deque. This method differs from peekFirst only in that it throws an exception if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "getLast",
+          "signature": "E getLast()",
+          "description": "Retrieves, but does not remove, the last element of this deque. This method differs from peekLast only in that it throws an exception if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "peekFirst",
+          "signature": "E peekFirst()",
+          "description": "Retrieves, but does not remove, the first element of this deque, or returns null if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "peekLast",
+          "signature": "E peekLast()",
+          "description": "Retrieves, but does not remove, the last element of this deque, or returns null if this deque is empty.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeFirstOccurrence",
+          "signature": "boolean removeFirstOccurrence(Object o)",
+          "description": "Removes the first occurrence of the specified element from this deque. If the deque does not contain the element, it is unchanged. Returns true if this deque contained the specified element.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "removeLastOccurrence",
+          "signature": "boolean removeLastOccurrence(Object o)",
+          "description": "Removes the last occurrence of the specified element from this deque. If the deque does not contain the element, it is unchanged. Returns true if this deque contained the specified element.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "push",
+          "signature": "void push(E e)",
+          "description": "Pushes an element onto the stack represented by this deque (in other words, at the head of this deque) if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "pop",
+          "signature": "E pop()",
+          "description": "Pops an element from the stack represented by this deque. In other words, removes and returns the first element of this deque. This method is equivalent to removeFirst().",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "descendingIterator",
+          "signature": "Iterator<E> descendingIterator()",
+          "description": "Returns an iterator over the elements in this deque in reverse sequential order. The elements will be returned in order from last (tail) to first (head).",
+          "returnType": "Iterator<E>",
+          "origin": "Interface"
+        },
+        {
+          "name": "putFirst",
+          "signature": "void putFirst(E e) throws InterruptedException",
+          "description": "Inserts the specified element at the front of this deque, waiting if necessary for space to become available.",
+          "returnType": "void",
+          "origin": "BlockingDeque"
+        },
+        {
+          "name": "putLast",
+          "signature": "void putLast(E e) throws InterruptedException",
+          "description": "Inserts the specified element at the end of this deque, waiting if necessary for space to become available.",
+          "returnType": "void",
+          "origin": "BlockingDeque"
+        },
+        {
+          "name": "takeFirst",
+          "signature": "E takeFirst() throws InterruptedException",
+          "description": "Retrieves and removes the first element of this deque, waiting if necessary until an element becomes available.",
+          "returnType": "E",
+          "origin": "BlockingDeque"
+        },
+        {
+          "name": "takeLast",
+          "signature": "E takeLast() throws InterruptedException",
+          "description": "Retrieves and removes the last element of this deque, waiting if necessary until an element becomes available.",
+          "returnType": "E",
+          "origin": "BlockingDeque"
+        },
+        {
+          "name": "offerFirst",
+          "signature": "boolean offerFirst(E e, long timeout, TimeUnit unit) throws InterruptedException",
+          "description": "Inserts the specified element at the front of this deque, waiting up to the specified wait time if necessary for space to become available.",
+          "returnType": "boolean",
+          "origin": "BlockingDeque"
+        },
+        {
+          "name": "offerLast",
+          "signature": "boolean offerLast(E e, long timeout, TimeUnit unit) throws InterruptedException",
+          "description": "Inserts the specified element at the end of this deque, waiting up to the specified wait time if necessary for space to become available.",
+          "returnType": "boolean",
+          "origin": "BlockingDeque"
+        }
+      ]
+    },
+    {
+      "type": "Iterator",
+      "implementations": ["Iterator", "ListIterator"],
+      "methods": [
+        {
+          "name": "hasNext",
+          "signature": "boolean hasNext()",
+          "description": "Returns true if the iteration has more elements. In other words, returns true if next() would return an element rather than throwing an exception.",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "next",
+          "signature": "E next()",
+          "description": "Returns the next element in the iteration. Throws NoSuchElementException if the iteration has no more elements.",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "remove",
+          "signature": "void remove()",
+          "description": "Removes from the underlying collection the last element returned by this iterator. This method can be called only once per call to next(). Throws IllegalStateException if the next method has not yet been called, or the remove method has already been called after the last call to the next method.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "forEachRemaining",
+          "signature": "void forEachRemaining(Consumer<? super E> action)",
+          "description": "Performs the given action for each remaining element until all elements have been processed or the action throws an exception. Actions are performed in the order of iteration.",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "hasPrevious",
+          "signature": "boolean hasPrevious()",
+          "description": "Returns true if this list iterator has more elements when traversing the list in the reverse direction. (ListIterator only)",
+          "returnType": "boolean",
+          "origin": "Interface"
+        },
+        {
+          "name": "previous",
+          "signature": "E previous()",
+          "description": "Returns the previous element in the list and moves the cursor position backwards. This method may be called repeatedly to iterate through the list backwards. (ListIterator only)",
+          "returnType": "E",
+          "origin": "Interface"
+        },
+        {
+          "name": "nextIndex",
+          "signature": "int nextIndex()",
+          "description": "Returns the index of the element that would be returned by a subsequent call to next(). Returns list size if the list iterator is at the end of the list. (ListIterator only)",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "previousIndex",
+          "signature": "int previousIndex()",
+          "description": "Returns the index of the element that would be returned by a subsequent call to previous(). Returns -1 if the list iterator is at the beginning of the list. (ListIterator only)",
+          "returnType": "int",
+          "origin": "Interface"
+        },
+        {
+          "name": "set",
+          "signature": "void set(E e)",
+          "description": "Replaces the last element returned by next() or previous() with the specified element. This call can be made only if neither remove() nor add(E) have been called after the last call to next or previous. (ListIterator only)",
+          "returnType": "void",
+          "origin": "Interface"
+        },
+        {
+          "name": "add",
+          "signature": "void add(E e)",
+          "description": "Inserts the specified element into the list. The element is inserted immediately before the element that would be returned by next(), if any, and after the element that would be returned by previous(), if any. (ListIterator only)",
+          "returnType": "void",
+          "origin": "Interface"
+        }
+      ]
+    },
+    {
+      "type": "Collections",
+      "implementations": ["Collections (Utility Class)"],
+      "methods": [
+        {
+          "name": "sort",
+          "signature": "static <T extends Comparable<? super T>> void sort(List<T> list)",
+          "description": "Sorts the specified list into ascending order, according to the natural ordering of its elements. All elements in the list must implement the Comparable interface.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "sort",
+          "signature": "static <T> void sort(List<T> list, Comparator<? super T> c)",
+          "description": "Sorts the specified list according to the order induced by the specified comparator. All elements in the list must be mutually comparable using the specified comparator.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "binarySearch",
+          "signature": "static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key)",
+          "description": "Searches the specified list for the specified object using the binary search algorithm. The list must be sorted into ascending order according to the natural ordering of its elements prior to making this call. Returns the index of the search key, if it is contained in the list; otherwise, (-(insertion point) - 1).",
+          "returnType": "int",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "binarySearch",
+          "signature": "static <T> int binarySearch(List<? extends T> list, T key, Comparator<? super T> c)",
+          "description": "Searches the specified list for the specified object using the binary search algorithm. The list must be sorted into ascending order according to the specified comparator prior to making this call.",
+          "returnType": "int",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "reverse",
+          "signature": "static void reverse(List<?> list)",
+          "description": "Reverses the order of the elements in the specified list. This method runs in linear time.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "shuffle",
+          "signature": "static void shuffle(List<?> list)",
+          "description": "Randomly permutes the specified list using a default source of randomness. All permutations occur with approximately equal likelihood.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "shuffle",
+          "signature": "static void shuffle(List<?> list, Random rnd)",
+          "description": "Randomly permute the specified list using the specified source of randomness. All permutations occur with equal likelihood assuming that the source of randomness is fair.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "swap",
+          "signature": "static void swap(List<?> list, int i, int j)",
+          "description": "Swaps the elements at the specified positions in the specified list. If the specified positions are equal, invoking this method leaves the list unchanged.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "fill",
+          "signature": "static <T> void fill(List<? super T> list, T obj)",
+          "description": "Replaces all of the elements of the specified list with the specified element. This method runs in linear time.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "copy",
+          "signature": "static <T> void copy(List<? super T> dest, List<? extends T> src)",
+          "description": "Copies all of the elements from one list into another. After the operation, the index of each copied element in the destination list will be identical to its index in the source list. The destination list must be at least as long as the source list.",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "min",
+          "signature": "static <T extends Object & Comparable<? super T>> T min(Collection<? extends T> coll)",
+          "description": "Returns the minimum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
+          "returnType": "T",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "min",
+          "signature": "static <T> T min(Collection<? extends T> coll, Comparator<? super T> comp)",
+          "description": "Returns the minimum element of the given collection, according to the order induced by the specified comparator. All elements in the collection must be mutually comparable by the specified comparator.",
+          "returnType": "T",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "max",
+          "signature": "static <T extends Object & Comparable<? super T>> T max(Collection<? extends T> coll)",
+          "description": "Returns the maximum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
+          "returnType": "T",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "max",
+          "signature": "static <T> T max(Collection<? extends T> coll, Comparator<? super T> comp)",
+          "description": "Returns the maximum element of the given collection, according to the order induced by the specified comparator. All elements in the collection must be mutually comparable by the specified comparator.",
+          "returnType": "T",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "rotate",
+          "signature": "static void rotate(List<?> list, int distance)",
+          "description": "Rotates the elements in the specified list by the specified distance. After calling this method, the element at index i will be the element previously at index (i - distance) mod list.size().",
+          "returnType": "void",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "replaceAll",
+          "signature": "static <T> boolean replaceAll(List<T> list, T oldVal, T newVal)",
+          "description": "Replaces all occurrences of one specified value in a list with another. Returns true if list contained one or more elements e such that Objects.equals(oldVal, e).",
+          "returnType": "boolean",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "indexOfSubList",
+          "signature": "static int indexOfSubList(List<?> source, List<?> target)",
+          "description": "Returns the starting position of the first occurrence of the specified target list within the specified source list, or -1 if there is no such occurrence.",
+          "returnType": "int",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "lastIndexOfSubList",
+          "signature": "static int lastIndexOfSubList(List<?> source, List<?> target)",
+          "description": "Returns the starting position of the last occurrence of the specified target list within the specified source list, or -1 if there is no such occurrence.",
+          "returnType": "int",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "unmodifiableCollection",
+          "signature": "static <T> Collection<T> unmodifiableCollection(Collection<? extends T> c)",
+          "description": "Returns an unmodifiable view of the specified collection. This method allows modules to provide users with read-only access to internal collections.",
+          "returnType": "Collection<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "unmodifiableList",
+          "signature": "static <T> List<T> unmodifiableList(List<? extends T> list)",
+          "description": "Returns an unmodifiable view of the specified list. This method allows modules to provide users with read-only access to internal lists.",
+          "returnType": "List<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "unmodifiableSet",
+          "signature": "static <T> Set<T> unmodifiableSet(Set<? extends T> s)",
+          "description": "Returns an unmodifiable view of the specified set. This method allows modules to provide users with read-only access to internal sets.",
+          "returnType": "Set<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "unmodifiableMap",
+          "signature": "static <K,V> Map<K,V> unmodifiableMap(Map<? extends K,? extends V> m)",
+          "description": "Returns an unmodifiable view of the specified map. This method allows modules to provide users with read-only access to internal maps.",
+          "returnType": "Map<K,V>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "synchronizedCollection",
+          "signature": "static <T> Collection<T> synchronizedCollection(Collection<T> c)",
+          "description": "Returns a synchronized (thread-safe) collection backed by the specified collection. In order to guarantee serial access, it is critical that all access to the backing collection is accomplished through the returned collection.",
+          "returnType": "Collection<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "synchronizedList",
+          "signature": "static <T> List<T> synchronizedList(List<T> list)",
+          "description": "Returns a synchronized (thread-safe) list backed by the specified list. In order to guarantee serial access, it is critical that all access to the backing list is accomplished through the returned list.",
+          "returnType": "List<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "synchronizedSet",
+          "signature": "static <T> Set<T> synchronizedSet(Set<T> s)",
+          "description": "Returns a synchronized (thread-safe) set backed by the specified set. In order to guarantee serial access, it is critical that all access to the backing set is accomplished through the returned set.",
+          "returnType": "Set<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "synchronizedMap",
+          "signature": "static <K,V> Map<K,V> synchronizedMap(Map<K,V> m)",
+          "description": "Returns a synchronized (thread-safe) map backed by the specified map. In order to guarantee serial access, it is critical that all access to the backing map is accomplished through the returned map.",
+          "returnType": "Map<K,V>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "emptyList",
+          "signature": "static <T> List<T> emptyList()",
+          "description": "Returns an empty list (immutable). This list is serializable. This method is useful for creating empty lists that can be passed to methods expecting a list.",
+          "returnType": "List<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "emptySet",
+          "signature": "static <T> Set<T> emptySet()",
+          "description": "Returns an empty set (immutable). This set is serializable. Unlike the like-named field, this method is parameterized.",
+          "returnType": "Set<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "emptyMap",
+          "signature": "static <K,V> Map<K,V> emptyMap()",
+          "description": "Returns an empty map (immutable). This map is serializable. This method is useful for creating empty maps that can be passed to methods expecting a map.",
+          "returnType": "Map<K,V>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "singleton",
+          "signature": "static <T> Set<T> singleton(T o)",
+          "description": "Returns an immutable set containing only the specified object. The returned set is serializable.",
+          "returnType": "Set<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "singletonList",
+          "signature": "static <T> List<T> singletonList(T o)",
+          "description": "Returns an immutable list containing only the specified object. The returned list is serializable.",
+          "returnType": "List<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "singletonMap",
+          "signature": "static <K,V> Map<K,V> singletonMap(K key, V value)",
+          "description": "Returns an immutable map, mapping only the specified key to the specified value. The returned map is serializable.",
+          "returnType": "Map<K,V>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "nCopies",
+          "signature": "static <T> List<T> nCopies(int n, T o)",
+          "description": "Returns an immutable list consisting of n copies of the specified object. The newly allocated data object is tiny (it contains a single reference to the data object). This method is useful in combination with the List.addAll method to grow lists.",
+          "returnType": "List<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "reverseOrder",
+          "signature": "static <T> Comparator<T> reverseOrder()",
+          "description": "Returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface.",
+          "returnType": "Comparator<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "reverseOrder",
+          "signature": "static <T> Comparator<T> reverseOrder(Comparator<T> cmp)",
+          "description": "Returns a comparator that imposes the reverse ordering of the specified comparator. If the specified comparator is null, this method is equivalent to reverseOrder() (in other words, it returns a comparator that imposes the reverse of the natural ordering on a collection of objects that implement the Comparable interface).",
+          "returnType": "Comparator<T>",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "frequency",
+          "signature": "static int frequency(Collection<?> c, Object o)",
+          "description": "Returns the number of elements in the specified collection equal to the specified object. More formally, returns the number of elements e in the collection such that Objects.equals(o, e).",
+          "returnType": "int",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "disjoint",
+          "signature": "static boolean disjoint(Collection<?> c1, Collection<?> c2)",
+          "description": "Returns true if the two specified collections have no elements in common. Care must be exercised if this method is used on collections that do not comply with the general contract for Collection.",
+          "returnType": "boolean",
+          "origin": "Utility Class"
+        },
+        {
+          "name": "addAll",
+          "signature": "static <T> boolean addAll(Collection<? super T> c, T... elements)",
+          "description": "Adds all of the specified elements to the specified collection. Elements to be added may be specified individually or as an array. Returns true if the collection changed as a result of the call.",
+          "returnType": "boolean",
+          "origin": "Utility Class"
+        }
+      ]
+    }
+  ]
+}
