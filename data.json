@@ -38,14 +38,16 @@
           "signature": "void clear()",
           "description": "Removes all of the elements from this list. The list will be empty after this call returns.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.clear();\n// list: []"
         },
         {
           "name": "contains",
           "signature": "boolean contains(Object o)",
           "description": "Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that Objects.equals(o, e).",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> list = Arrays.asList(\"A\", \"B\");\nboolean has = list.contains(\"A\");\n// has: true"
         },
         {
           "name": "containsAll",
@@ -66,7 +68,8 @@
           "signature": "E get(int index)",
           "description": "Returns the element at the specified position in this list. Throws IndexOutOfBoundsException if the index is out of range.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> list = Arrays.asList(\"A\", \"B\", \"C\");\nString item = list.get(1);\n// item: \"B\""
         },
         {
           "name": "hashCode",
@@ -129,7 +132,8 @@
           "signature": "boolean remove(Object o)",
           "description": "Removes the first occurrence of the specified element from this list, if it is present. Returns true if this list contained the specified element.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> list = new ArrayList<>(Arrays.asList(\"A\", \"B\"));\nlist.remove(\"B\");\n// list: [A]"
         },
         {
           "name": "removeAll",
@@ -157,7 +161,8 @@
           "signature": "int size()",
           "description": "Returns the number of elements in this list.",
           "returnType": "int",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> list = Arrays.asList(\"A\", \"B\", \"C\");\nint count = list.size();\n// count: 3"
         },
         {
           "name": "subList",
@@ -415,7 +420,8 @@
           "signature": "boolean add(E e)",
           "description": "Adds the specified element to this set if it is not already present. Returns true if this set did not already contain the specified element.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> set = new HashSet<>();\nset.add(\"Apple\");\nset.add(\"Apple\");\n// set: [Apple] (no duplicates)"
         },
         {
           "name": "addAll",
@@ -436,7 +442,8 @@
           "signature": "boolean contains(Object o)",
           "description": "Returns true if this set contains the specified element. More formally, returns true if and only if this set contains an element e such that Objects.equals(o, e).",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nboolean has = set.contains(\"A\");\n// has: true"
         },
         {
           "name": "containsAll",
@@ -478,7 +485,8 @@
           "signature": "boolean remove(Object o)",
           "description": "Removes the specified element from this set if it is present. Returns true if this set contained the specified element.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nset.remove(\"A\");\n// set: [B]"
         },
         {
           "name": "removeAll",
@@ -499,7 +507,8 @@
           "signature": "int size()",
           "description": "Returns the number of elements in this set (its cardinality).",
           "returnType": "int",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nint count = set.size();\n// count: 2"
         },
         {
           "name": "toArray",
@@ -631,7 +640,8 @@
           "signature": "boolean containsKey(Object key)",
           "description": "Returns true if this map contains a mapping for the specified key. More formally, returns true if and only if this map contains a mapping for a key k such that Objects.equals(key, k).",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nboolean has = map.containsKey(\"A\");\n// has: true"
         },
         {
           "name": "containsValue",
@@ -659,7 +669,8 @@
           "signature": "V get(Object key)",
           "description": "Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.",
           "returnType": "V",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nInteger val = map.get(\"A\");\n// val: 1"
         },
         {
           "name": "getOrDefault",
@@ -694,7 +705,8 @@
           "signature": "V put(K key, V value)",
           "description": "Associates the specified value with the specified key in this map. If the map previously contained a mapping for the key, the old value is replaced. Returns the previous value associated with key, or null if there was no mapping for key.",
           "returnType": "V",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nmap.put(\"B\", 2);\n// map: {A=1, B=2}"
         },
         {
           "name": "putAll",
@@ -715,7 +727,8 @@
           "signature": "V remove(Object key)",
           "description": "Removes the mapping for a key from this map if it is present. Returns the value to which this map previously associated the key, or null if the map contained no mapping for the key.",
           "returnType": "V",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nmap.remove(\"A\");\n// map: {}"
         },
         {
           "name": "remove",
@@ -743,7 +756,8 @@
           "signature": "int size()",
           "description": "Returns the number of key-value mappings in this map.",
           "returnType": "int",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nint count = map.size();\n// count: 1"
         },
         {
           "name": "values",
@@ -903,21 +917,24 @@
           "signature": "boolean offer(E e)",
           "description": "Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. Returns true upon success and false if no space is currently available.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Queue<String> queue = new LinkedList<>();\nqueue.offer(\"First\");\nqueue.offer(\"Second\");\n// queue: [First, Second]"
         },
         {
           "name": "peek",
           "signature": "E peek()",
           "description": "Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Queue<String> queue = new LinkedList<>();\nqueue.add(\"First\");\nString item = queue.peek();\n// item: \"First\""
         },
         {
           "name": "poll",
           "signature": "E poll()",
           "description": "Retrieves and removes the head of this queue, or returns null if this queue is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Queue<String> queue = new LinkedList<>();\nqueue.add(\"First\");\nString item = queue.poll();\n// item: \"First\""
         },
         {
           "name": "remove",
@@ -1007,14 +1024,16 @@
           "signature": "void addFirst(E e)",
           "description": "Inserts the specified element at the front of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> deque = new ArrayDeque<>();\ndeque.addFirst(\"First\");\ndeque.addFirst(\"New First\");\n// deque: [New First, First]"
         },
         {
           "name": "addLast",
           "signature": "void addLast(E e)",
           "description": "Inserts the specified element at the end of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> deque = new ArrayDeque<>();\ndeque.addLast(\"First\");\ndeque.addLast(\"Last\");\n// deque: [First, Last]"
         },
         {
           "name": "offerFirst",
@@ -1105,14 +1124,16 @@
           "signature": "void push(E e)",
           "description": "Pushes an element onto the stack represented by this deque (in other words, at the head of this deque) if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> stack = new ArrayDeque<>();\nstack.push(\"First\");\nstack.push(\"Second\");\n// stack: [Second, First]"
         },
         {
           "name": "pop",
           "signature": "E pop()",
           "description": "Pops an element from the stack represented by this deque. In other words, removes and returns the first element of this deque. This method is equivalent to removeFirst().",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> stack = new ArrayDeque<>();\nstack.push(\"First\");\nString top = stack.pop();\n// top: \"First\""
         },
         {
           "name": "descendingIterator",
@@ -1174,14 +1195,16 @@
           "signature": "boolean hasNext()",
           "description": "Returns true if the iteration has more elements. In other words, returns true if next() would return an element rather than throwing an exception.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Iterator<String> it = list.iterator();\nboolean has = it.hasNext();\n// has: true"
         },
         {
           "name": "next",
           "signature": "E next()",
           "description": "Returns the next element in the iteration. Throws NoSuchElementException if the iteration has no more elements.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Iterator<String> it = list.iterator();\nString elem = it.next();\n// elem: first element"
         },
         {
           "name": "remove",
@@ -1250,7 +1273,8 @@
           "signature": "static <T extends Comparable<? super T>> void sort(List<T> list)",
           "description": "Sorts the specified list into ascending order, according to the natural ordering of its elements. All elements in the list must implement the Comparable interface.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(3, 1, 2));\nCollections.sort(list);\n// list: [1, 2, 3]"
         },
         {
           "name": "sort",
@@ -1278,14 +1302,16 @@
           "signature": "static void reverse(List<?> list)",
           "description": "Reverses the order of the elements in the specified list. This method runs in linear time.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.reverse(list);\n// list: [3, 2, 1]"
         },
         {
           "name": "shuffle",
           "signature": "static void shuffle(List<?> list)",
           "description": "Randomly permutes the specified list using a default source of randomness. All permutations occur with approximately equal likelihood.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.shuffle(list);\n// list: random order"
         },
         {
           "name": "shuffle",
@@ -1320,7 +1346,8 @@
           "signature": "static <T extends Object & Comparable<? super T>> T min(Collection<? extends T> coll)",
           "description": "Returns the minimum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
           "returnType": "T",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> list = Arrays.asList(3, 1, 2);\nInteger min = Collections.min(list);\n// min: 1"
         },
         {
           "name": "min",
@@ -1334,7 +1361,8 @@
           "signature": "static <T extends Object & Comparable<? super T>> T max(Collection<? extends T> coll)",
           "description": "Returns the maximum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
           "returnType": "T",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> list = Arrays.asList(3, 1, 2);\nInteger max = Collections.max(list);\n// max: 3"
         },
         {
           "name": "max",
