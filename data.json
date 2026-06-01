@@ -10,21 +10,23 @@
           "description": "Appends the specified element to the end of this list. Returns true if the list changed as a result of the call.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "List<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.add(\"Banana\");\n// list: [Apple, Banana]"
+          "example": "List<String> tasks = new ArrayList<>();\ntasks.add(\"Buy groceries\");\ntasks.add(\"Call dentist\");\n// tasks: [Buy groceries, Call dentist]"
         },
         {
           "name": "add",
           "signature": "void add(int index, E element)",
           "description": "Inserts the specified element at the specified position in this list. Shifts the element currently at that position and any subsequent elements to the right.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> menu = new ArrayList<>(Arrays.asList(\"Appetizer\", \"Dessert\"));\nmenu.add(1, \"Main Course\");\n// menu: [Appetizer, Main Course, Dessert]"
         },
         {
           "name": "addAll",
           "signature": "boolean addAll(Collection<? extends E> c)",
           "description": "Appends all of the elements in the specified collection to the end of this list, in the order that they are returned by the specified collection's iterator.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> team = new ArrayList<>(Arrays.asList(\"Alice\"));\nList<String> newMembers = Arrays.asList(\"Bob\", \"Charlie\");\nteam.addAll(newMembers);\n// team: [Alice, Bob, Charlie]"
         },
         {
           "name": "addAll",
@@ -39,7 +41,7 @@
           "description": "Removes all of the elements from this list. The list will be empty after this call returns.",
           "returnType": "void",
           "origin": "Interface",
-          "example": "List<String> list = new ArrayList<>();\nlist.add(\"Apple\");\nlist.clear();\n// list: []"
+          "example": "List<String> notifications = new ArrayList<>();\nnotifications.add(\"New message\");\nnotifications.clear();\n// notifications: [] (all cleared)"
         },
         {
           "name": "contains",
@@ -47,7 +49,7 @@
           "description": "Returns true if this list contains the specified element. More formally, returns true if and only if this list contains at least one element e such that Objects.equals(o, e).",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "List<String> list = Arrays.asList(\"A\", \"B\");\nboolean has = list.contains(\"A\");\n// has: true"
+          "example": "List<String> attendees = Arrays.asList(\"Alice\", \"Bob\", \"Charlie\");\nboolean isPresent = attendees.contains(\"Bob\");\n// isPresent: true"
         },
         {
           "name": "containsAll",
@@ -69,7 +71,7 @@
           "description": "Returns the element at the specified position in this list. Throws IndexOutOfBoundsException if the index is out of range.",
           "returnType": "E",
           "origin": "Interface",
-          "example": "List<String> list = Arrays.asList(\"A\", \"B\", \"C\");\nString item = list.get(1);\n// item: \"B\""
+          "example": "List<String> fruits = Arrays.asList(\"Apple\", \"Banana\", \"Cherry\");\nString second = fruits.get(1);\n// second: \"Banana\""
         },
         {
           "name": "hashCode",
@@ -83,14 +85,16 @@
           "signature": "int indexOf(Object o)",
           "description": "Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.",
           "returnType": "int",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> colors = Arrays.asList(\"Red\", \"Green\", \"Blue\");\nint position = colors.indexOf(\"Green\");\n// position: 1"
         },
         {
           "name": "isEmpty",
           "signature": "boolean isEmpty()",
           "description": "Returns true if this list contains no elements.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> emptyList = new ArrayList<>();\nboolean empty = emptyList.isEmpty();\n// empty: true"
         },
         {
           "name": "iterator",
@@ -133,7 +137,7 @@
           "description": "Removes the first occurrence of the specified element from this list, if it is present. Returns true if this list contained the specified element.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "List<String> list = new ArrayList<>(Arrays.asList(\"A\", \"B\"));\nlist.remove(\"B\");\n// list: [A]"
+          "example": "List<String> cart = new ArrayList<>(Arrays.asList(\"Laptop\", \"Mouse\", \"Keyboard\"));\ncart.remove(\"Mouse\");\n// cart: [Laptop, Keyboard]"
         },
         {
           "name": "removeAll",
@@ -154,7 +158,8 @@
           "signature": "E set(int index, E element)",
           "description": "Replaces the element at the specified position in this list with the specified element. Returns the element previously at the specified position.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> status = new ArrayList<>(Arrays.asList(\"Pending\", \"Active\"));\nstatus.set(0, \"Completed\");\n// status: [Completed, Active]"
         },
         {
           "name": "size",
@@ -162,14 +167,15 @@
           "description": "Returns the number of elements in this list.",
           "returnType": "int",
           "origin": "Interface",
-          "example": "List<String> list = Arrays.asList(\"A\", \"B\", \"C\");\nint count = list.size();\n// count: 3"
+          "example": "List<String> playlist = Arrays.asList(\"Song1\", \"Song2\", \"Song3\");\nint totalSongs = playlist.size();\n// totalSongs: 3"
         },
         {
           "name": "subList",
           "signature": "List<E> subList(int fromIndex, int toIndex)",
           "description": "Returns a view of the portion of this list between the specified fromIndex (inclusive) and toIndex (exclusive). Changes to the returned list are reflected in this list, and vice-versa.",
           "returnType": "List<E>",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "List<String> months = Arrays.asList(\"Jan\", \"Feb\", \"Mar\", \"Apr\");\nList<String> q1 = months.subList(0, 3);\n// q1: [Jan, Feb, Mar]"
         },
         {
           "name": "toArray",
@@ -421,14 +427,15 @@
           "description": "Adds the specified element to this set if it is not already present. Returns true if this set did not already contain the specified element.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Set<String> set = new HashSet<>();\nset.add(\"Apple\");\nset.add(\"Apple\");\n// set: [Apple] (no duplicates)"
+          "example": "Set<String> tags = new HashSet<>();\ntags.add(\"java\");\ntags.add(\"java\");\n// tags: [java] (duplicates automatically removed)"
         },
         {
           "name": "addAll",
           "signature": "boolean addAll(Collection<? extends E> c)",
           "description": "Adds all of the elements in the specified collection to this set if they're not already present. Returns true if this set changed as a result of the call.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> skills = new HashSet<>(Arrays.asList(\"Java\"));\nSet<String> newSkills = Set.of(\"Python\", \"SQL\");\nskills.addAll(newSkills);\n// skills: [Java, Python, SQL]"
         },
         {
           "name": "clear",
@@ -443,7 +450,7 @@
           "description": "Returns true if this set contains the specified element. More formally, returns true if and only if this set contains an element e such that Objects.equals(o, e).",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nboolean has = set.contains(\"A\");\n// has: true"
+          "example": "Set<String> emails = new HashSet<>(Arrays.asList(\"alice@example.com\", \"bob@example.com\"));\nboolean exists = emails.contains(\"alice@example.com\");\n// exists: true"
         },
         {
           "name": "containsAll",
@@ -471,7 +478,8 @@
           "signature": "boolean isEmpty()",
           "description": "Returns true if this set contains no elements.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Set<String> emptySet = new HashSet<>();\nboolean empty = emptySet.isEmpty();\n// empty: true"
         },
         {
           "name": "iterator",
@@ -486,7 +494,7 @@
           "description": "Removes the specified element from this set if it is present. Returns true if this set contained the specified element.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nset.remove(\"A\");\n// set: [B]"
+          "example": "Set<String> permissions = new HashSet<>(Arrays.asList(\"read\", \"write\", \"execute\"));\npermissions.remove(\"execute\");\n// permissions: [read, write]"
         },
         {
           "name": "removeAll",
@@ -508,7 +516,7 @@
           "description": "Returns the number of elements in this set (its cardinality).",
           "returnType": "int",
           "origin": "Interface",
-          "example": "Set<String> set = new HashSet<>(Arrays.asList(\"A\", \"B\"));\nint count = set.size();\n// count: 2"
+          "example": "Set<Integer> uniqueIds = new HashSet<>(Arrays.asList(101, 102, 103));\nint totalUnique = uniqueIds.size();\n// totalUnique: 3"
         },
         {
           "name": "toArray",
@@ -641,7 +649,7 @@
           "description": "Returns true if this map contains a mapping for the specified key. More formally, returns true if and only if this map contains a mapping for a key k such that Objects.equals(key, k).",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nboolean has = map.containsKey(\"A\");\n// has: true"
+          "example": "Map<String, Integer> scores = new HashMap<>();\nscores.put(\"Alice\", 95);\nboolean hasScore = scores.containsKey(\"Alice\");\n// hasScore: true"
         },
         {
           "name": "containsValue",
@@ -670,14 +678,15 @@
           "description": "Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.",
           "returnType": "V",
           "origin": "Interface",
-          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nInteger val = map.get(\"A\");\n// val: 1"
+          "example": "Map<String, Integer> inventory = new HashMap<>();\ninventory.put(\"Laptop\", 50);\nInteger stock = inventory.get(\"Laptop\");\n// stock: 50"
         },
         {
           "name": "getOrDefault",
           "signature": "V getOrDefault(Object key, V defaultValue)",
           "description": "Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.",
           "returnType": "V",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> stock = new HashMap<>();\nstock.put(\"Apple\", 10);\nint count = stock.getOrDefault(\"Banana\", 0);\n// count: 0 (default value)"
         },
         {
           "name": "hashCode",
@@ -691,14 +700,16 @@
           "signature": "boolean isEmpty()",
           "description": "Returns true if this map contains no key-value mappings.",
           "returnType": "boolean",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, String> emptyMap = new HashMap<>();\nboolean empty = emptyMap.isEmpty();\n// empty: true"
         },
         {
           "name": "keySet",
           "signature": "Set<K> keySet()",
           "description": "Returns a Set view of the keys contained in this map. The set is backed by the map, so changes to the map are reflected in the set, and vice-versa.",
           "returnType": "Set<K>",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> grades = new HashMap<>();\ngrades.put(\"Math\", 90);\ngrades.put(\"Science\", 85);\nSet<String> subjects = grades.keySet();\n// subjects: [Math, Science]"
         },
         {
           "name": "put",
@@ -706,21 +717,23 @@
           "description": "Associates the specified value with the specified key in this map. If the map previously contained a mapping for the key, the old value is replaced. Returns the previous value associated with key, or null if there was no mapping for key.",
           "returnType": "V",
           "origin": "Interface",
-          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nmap.put(\"B\", 2);\n// map: {A=1, B=2}"
+          "example": "Map<String, Integer> ages = new HashMap<>();\nages.put(\"Alice\", 25);\nages.put(\"Bob\", 30);\n// ages: {Alice=25, Bob=30}"
         },
         {
           "name": "putAll",
           "signature": "void putAll(Map<? extends K,? extends V> m)",
           "description": "Copies all of the mappings from the specified map to this map. The effect is equivalent to calling put(k, v) on this map once for each mapping from key k to value v in the specified map.",
           "returnType": "void",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, String> settings = new HashMap<>();\nMap<String, String> defaults = Map.of(\"theme\", \"light\", \"lang\", \"en\");\nsettings.putAll(defaults);\n// settings: {theme=light, lang=en}"
         },
         {
           "name": "putIfAbsent",
           "signature": "V putIfAbsent(K key, V value)",
           "description": "If the specified key is not already associated with a value (or is mapped to null) associates it with the given value and returns null, else returns the current value.",
           "returnType": "V",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> cache = new HashMap<>();\ncache.putIfAbsent(\"userId\", 101);\ncache.putIfAbsent(\"userId\", 102);\n// cache: {userId=101} (first value kept)"
         },
         {
           "name": "remove",
@@ -728,7 +741,7 @@
           "description": "Removes the mapping for a key from this map if it is present. Returns the value to which this map previously associated the key, or null if the map contained no mapping for the key.",
           "returnType": "V",
           "origin": "Interface",
-          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nmap.remove(\"A\");\n// map: {}"
+          "example": "Map<String, String> config = new HashMap<>();\nconfig.put(\"theme\", \"dark\");\nconfig.remove(\"theme\");\n// config: {} (setting removed)"
         },
         {
           "name": "remove",
@@ -757,14 +770,15 @@
           "description": "Returns the number of key-value mappings in this map.",
           "returnType": "int",
           "origin": "Interface",
-          "example": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"A\", 1);\nint count = map.size();\n// count: 1"
+          "example": "Map<String, Double> prices = new HashMap<>();\nprices.put(\"Coffee\", 4.99);\nprices.put(\"Tea\", 3.99);\nint items = prices.size();\n// items: 2"
         },
         {
           "name": "values",
           "signature": "Collection<V> values()",
           "description": "Returns a Collection view of the values contained in this map. The collection is backed by the map, so changes to the map are reflected in the collection, and vice-versa.",
           "returnType": "Collection<V>",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Map<String, Integer> cart = new HashMap<>();\ncart.put(\"Item1\", 2);\ncart.put(\"Item2\", 5);\nCollection<Integer> quantities = cart.values();\n// quantities: [2, 5]"
         },
         {
           "name": "compute",
@@ -918,7 +932,7 @@
           "description": "Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions. Returns true upon success and false if no space is currently available.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Queue<String> queue = new LinkedList<>();\nqueue.offer(\"First\");\nqueue.offer(\"Second\");\n// queue: [First, Second]"
+          "example": "Queue<String> customerQueue = new LinkedList<>();\ncustomerQueue.offer(\"Customer1\");\ncustomerQueue.offer(\"Customer2\");\n// customerQueue: [Customer1, Customer2]"
         },
         {
           "name": "peek",
@@ -926,7 +940,7 @@
           "description": "Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.",
           "returnType": "E",
           "origin": "Interface",
-          "example": "Queue<String> queue = new LinkedList<>();\nqueue.add(\"First\");\nString item = queue.peek();\n// item: \"First\""
+          "example": "Queue<String> printQueue = new LinkedList<>();\nprintQueue.add(\"Document1.pdf\");\nString next = printQueue.peek();\n// next: \"Document1.pdf\" (not removed)"
         },
         {
           "name": "poll",
@@ -934,7 +948,7 @@
           "description": "Retrieves and removes the head of this queue, or returns null if this queue is empty.",
           "returnType": "E",
           "origin": "Interface",
-          "example": "Queue<String> queue = new LinkedList<>();\nqueue.add(\"First\");\nString item = queue.poll();\n// item: \"First\""
+          "example": "Queue<String> messageQueue = new LinkedList<>();\nmessageQueue.add(\"Message1\");\nString processed = messageQueue.poll();\n// processed: \"Message1\" (removed from queue)"
         },
         {
           "name": "remove",
@@ -1025,7 +1039,7 @@
           "description": "Inserts the specified element at the front of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
           "origin": "Interface",
-          "example": "Deque<String> deque = new ArrayDeque<>();\ndeque.addFirst(\"First\");\ndeque.addFirst(\"New First\");\n// deque: [New First, First]"
+          "example": "Deque<String> browserHistory = new ArrayDeque<>();\nbrowserHistory.addFirst(\"google.com\");\nbrowserHistory.addFirst(\"github.com\");\n// browserHistory: [github.com, google.com]"
         },
         {
           "name": "addLast",
@@ -1033,7 +1047,7 @@
           "description": "Inserts the specified element at the end of this deque if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
           "origin": "Interface",
-          "example": "Deque<String> deque = new ArrayDeque<>();\ndeque.addLast(\"First\");\ndeque.addLast(\"Last\");\n// deque: [First, Last]"
+          "example": "Deque<String> playlist = new ArrayDeque<>();\nplaylist.addLast(\"Song1\");\nplaylist.addLast(\"Song2\");\n// playlist: [Song1, Song2]"
         },
         {
           "name": "offerFirst",
@@ -1068,14 +1082,16 @@
           "signature": "E pollFirst()",
           "description": "Retrieves and removes the first element of this deque, or returns null if this deque is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> queue = new ArrayDeque<>(Arrays.asList(\"First\", \"Second\"));\nString removed = queue.pollFirst();\n// removed: \"First\", queue: [Second]"
         },
         {
           "name": "pollLast",
           "signature": "E pollLast()",
           "description": "Retrieves and removes the last element of this deque, or returns null if this deque is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> items = new ArrayDeque<>(Arrays.asList(\"Item1\", \"Item2\"));\nString last = items.pollLast();\n// last: \"Item2\", items: [Item1]"
         },
         {
           "name": "getFirst",
@@ -1096,14 +1112,16 @@
           "signature": "E peekFirst()",
           "description": "Retrieves, but does not remove, the first element of this deque, or returns null if this deque is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> tasks = new ArrayDeque<>(Arrays.asList(\"Task1\", \"Task2\"));\nString first = tasks.peekFirst();\n// first: \"Task1\" (not removed)"
         },
         {
           "name": "peekLast",
           "signature": "E peekLast()",
           "description": "Retrieves, but does not remove, the last element of this deque, or returns null if this deque is empty.",
           "returnType": "E",
-          "origin": "Interface"
+          "origin": "Interface",
+          "example": "Deque<String> history = new ArrayDeque<>(Arrays.asList(\"Page1\", \"Page2\"));\nString last = history.peekLast();\n// last: \"Page2\" (not removed)"
         },
         {
           "name": "removeFirstOccurrence",
@@ -1125,7 +1143,7 @@
           "description": "Pushes an element onto the stack represented by this deque (in other words, at the head of this deque) if it is possible to do so immediately without violating capacity restrictions. Throws an IllegalStateException if no space is currently available.",
           "returnType": "void",
           "origin": "Interface",
-          "example": "Deque<String> stack = new ArrayDeque<>();\nstack.push(\"First\");\nstack.push(\"Second\");\n// stack: [Second, First]"
+          "example": "Deque<String> undoStack = new ArrayDeque<>();\nundoStack.push(\"Action1\");\nundoStack.push(\"Action2\");\n// undoStack: [Action2, Action1] (LIFO)"
         },
         {
           "name": "pop",
@@ -1133,7 +1151,7 @@
           "description": "Pops an element from the stack represented by this deque. In other words, removes and returns the first element of this deque. This method is equivalent to removeFirst().",
           "returnType": "E",
           "origin": "Interface",
-          "example": "Deque<String> stack = new ArrayDeque<>();\nstack.push(\"First\");\nString top = stack.pop();\n// top: \"First\""
+          "example": "Deque<String> undoStack = new ArrayDeque<>();\nundoStack.push(\"Edit1\");\nString lastAction = undoStack.pop();\n// lastAction: \"Edit1\" (undo performed)"
         },
         {
           "name": "descendingIterator",
@@ -1196,7 +1214,7 @@
           "description": "Returns true if the iteration has more elements. In other words, returns true if next() would return an element rather than throwing an exception.",
           "returnType": "boolean",
           "origin": "Interface",
-          "example": "Iterator<String> it = list.iterator();\nboolean has = it.hasNext();\n// has: true"
+          "example": "List<String> names = Arrays.asList(\"Alice\", \"Bob\");\nIterator<String> it = names.iterator();\nboolean hasMore = it.hasNext();\n// hasMore: true"
         },
         {
           "name": "next",
@@ -1204,7 +1222,7 @@
           "description": "Returns the next element in the iteration. Throws NoSuchElementException if the iteration has no more elements.",
           "returnType": "E",
           "origin": "Interface",
-          "example": "Iterator<String> it = list.iterator();\nString elem = it.next();\n// elem: first element"
+          "example": "List<String> cities = Arrays.asList(\"NYC\", \"LA\");\nIterator<String> it = cities.iterator();\nString first = it.next();\n// first: \"NYC\""
         },
         {
           "name": "remove",
@@ -1274,7 +1292,7 @@
           "description": "Sorts the specified list into ascending order, according to the natural ordering of its elements. All elements in the list must implement the Comparable interface.",
           "returnType": "void",
           "origin": "Utility Class",
-          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(3, 1, 2));\nCollections.sort(list);\n// list: [1, 2, 3]"
+          "example": "List<Integer> scores = new ArrayList<>(Arrays.asList(85, 92, 78));\nCollections.sort(scores);\n// scores: [78, 85, 92]"
         },
         {
           "name": "sort",
@@ -1288,7 +1306,8 @@
           "signature": "static <T> int binarySearch(List<? extends Comparable<? super T>> list, T key)",
           "description": "Searches the specified list for the specified object using the binary search algorithm. The list must be sorted into ascending order according to the natural ordering of its elements prior to making this call. Returns the index of the search key, if it is contained in the list; otherwise, (-(insertion point) - 1).",
           "returnType": "int",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<Integer> numbers = Arrays.asList(10, 20, 30, 40);\nint index = Collections.binarySearch(numbers, 30);\n// index: 2"
         },
         {
           "name": "binarySearch",
@@ -1303,7 +1322,7 @@
           "description": "Reverses the order of the elements in the specified list. This method runs in linear time.",
           "returnType": "void",
           "origin": "Utility Class",
-          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.reverse(list);\n// list: [3, 2, 1]"
+          "example": "List<String> steps = new ArrayList<>(Arrays.asList(\"Step1\", \"Step2\", \"Step3\"));\nCollections.reverse(steps);\n// steps: [Step3, Step2, Step1]"
         },
         {
           "name": "shuffle",
@@ -1311,7 +1330,7 @@
           "description": "Randomly permutes the specified list using a default source of randomness. All permutations occur with approximately equal likelihood.",
           "returnType": "void",
           "origin": "Utility Class",
-          "example": "List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3));\nCollections.shuffle(list);\n// list: random order"
+          "example": "List<String> cards = new ArrayList<>(Arrays.asList(\"Ace\", \"King\", \"Queen\"));\nCollections.shuffle(cards);\n// cards: random order (e.g., [Queen, Ace, King])"
         },
         {
           "name": "shuffle",
@@ -1325,21 +1344,24 @@
           "signature": "static void swap(List<?> list, int i, int j)",
           "description": "Swaps the elements at the specified positions in the specified list. If the specified positions are equal, invoking this method leaves the list unchanged.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<String> players = new ArrayList<>(Arrays.asList(\"Alice\", \"Bob\", \"Charlie\"));\nCollections.swap(players, 0, 2);\n// players: [Charlie, Bob, Alice]"
         },
         {
           "name": "fill",
           "signature": "static <T> void fill(List<? super T> list, T obj)",
           "description": "Replaces all of the elements of the specified list with the specified element. This method runs in linear time.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<String> slots = new ArrayList<>(Arrays.asList(\"A\", \"B\", \"C\"));\nCollections.fill(slots, \"Empty\");\n// slots: [Empty, Empty, Empty]"
         },
         {
           "name": "copy",
           "signature": "static <T> void copy(List<? super T> dest, List<? extends T> src)",
           "description": "Copies all of the elements from one list into another. After the operation, the index of each copied element in the destination list will be identical to its index in the source list. The destination list must be at least as long as the source list.",
           "returnType": "void",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<String> source = Arrays.asList(\"X\", \"Y\");\nList<String> dest = new ArrayList<>(Arrays.asList(\"A\", \"B\", \"C\"));\nCollections.copy(dest, source);\n// dest: [X, Y, C]"
         },
         {
           "name": "min",
@@ -1347,7 +1369,7 @@
           "description": "Returns the minimum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
           "returnType": "T",
           "origin": "Utility Class",
-          "example": "List<Integer> list = Arrays.asList(3, 1, 2);\nInteger min = Collections.min(list);\n// min: 1"
+          "example": "List<Integer> temperatures = Arrays.asList(72, 65, 80);\nInteger lowest = Collections.min(temperatures);\n// lowest: 65"
         },
         {
           "name": "min",
@@ -1362,7 +1384,7 @@
           "description": "Returns the maximum element of the given collection, according to the natural ordering of its elements. All elements in the collection must implement the Comparable interface.",
           "returnType": "T",
           "origin": "Utility Class",
-          "example": "List<Integer> list = Arrays.asList(3, 1, 2);\nInteger max = Collections.max(list);\n// max: 3"
+          "example": "List<Integer> prices = Arrays.asList(299, 499, 199);\nInteger highest = Collections.max(prices);\n// highest: 499"
         },
         {
           "name": "max",
@@ -1523,7 +1545,8 @@
           "signature": "static int frequency(Collection<?> c, Object o)",
           "description": "Returns the number of elements in the specified collection equal to the specified object. More formally, returns the number of elements e in the collection such that Objects.equals(o, e).",
           "returnType": "int",
-          "origin": "Utility Class"
+          "origin": "Utility Class",
+          "example": "List<String> votes = Arrays.asList(\"Yes\", \"No\", \"Yes\", \"Yes\");\nint yesCount = Collections.frequency(votes, \"Yes\");\n// yesCount: 3"
         },
         {
           "name": "disjoint",
@@ -1538,6 +1561,244 @@
           "description": "Adds all of the specified elements to the specified collection. Elements to be added may be specified individually or as an array. Returns true if the collection changed as a result of the call.",
           "returnType": "boolean",
           "origin": "Utility Class"
+        }
+      ]
+    },
+    {
+      "type": "Array",
+      "implementations": ["Primitive Arrays (int[], String[], etc.)", "Arrays (Utility Class)"],
+      "methods": [
+        {
+          "name": "Array Creation",
+          "signature": "type[] arrayName = new type[size]",
+          "description": "Creates a new array of the specified type and size. All elements are initialized to default values (0 for numbers, null for objects, false for boolean).",
+          "returnType": "type[]",
+          "origin": "Native Array",
+          "example": "int[] scores = new int[5];\nString[] names = new String[3];\n// scores: [0, 0, 0, 0, 0]\n// names: [null, null, null]"
+        },
+        {
+          "name": "Array Initialization",
+          "signature": "type[] arrayName = {element1, element2, ...}",
+          "description": "Creates and initializes an array with the specified elements. The array size is determined by the number of elements provided.",
+          "returnType": "type[]",
+          "origin": "Native Array",
+          "example": "int[] primes = {2, 3, 5, 7, 11};\nString[] colors = {\"Red\", \"Green\", \"Blue\"};\n// primes: [2, 3, 5, 7, 11]\n// colors: [Red, Green, Blue]"
+        },
+        {
+          "name": "Array Access",
+          "signature": "array[index]",
+          "description": "Accesses the element at the specified index. Index starts at 0. Throws ArrayIndexOutOfBoundsException if index is out of range.",
+          "returnType": "type",
+          "origin": "Native Array",
+          "example": "String[] fruits = {\"Apple\", \"Banana\", \"Cherry\"};\nString second = fruits[1];\nfruits[2] = \"Orange\";\n// second: \"Banana\"\n// fruits: [Apple, Banana, Orange]"
+        },
+        {
+          "name": "length",
+          "signature": "array.length",
+          "description": "Returns the number of elements in the array. This is a property, not a method, so no parentheses are used.",
+          "returnType": "int",
+          "origin": "Native Array",
+          "example": "int[] numbers = {10, 20, 30, 40};\nint size = numbers.length;\n// size: 4"
+        },
+        {
+          "name": "clone",
+          "signature": "array.clone()",
+          "description": "Creates a shallow copy of the array. For arrays of primitives, this creates a true copy. For arrays of objects, it copies references.",
+          "returnType": "type[]",
+          "origin": "Native Array",
+          "example": "int[] original = {1, 2, 3};\nint[] copy = original.clone();\ncopy[0] = 99;\n// original: [1, 2, 3]\n// copy: [99, 2, 3]"
+        },
+        {
+          "name": "sort",
+          "signature": "static void sort(int[] a)",
+          "description": "Sorts the specified array into ascending numerical order using a dual-pivot Quicksort algorithm. This method offers O(n log(n)) performance on many data sets.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] testScores = {85, 92, 78, 95, 88};\nArrays.sort(testScores);\n// testScores: [78, 85, 88, 92, 95]"
+        },
+        {
+          "name": "sort",
+          "signature": "static void sort(Object[] a)",
+          "description": "Sorts the specified array of objects into ascending order, according to the natural ordering of its elements. All elements must implement the Comparable interface.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "String[] names = {\"Charlie\", \"Alice\", \"Bob\"};\nArrays.sort(names);\n// names: [Alice, Bob, Charlie]"
+        },
+        {
+          "name": "sort",
+          "signature": "static void sort(int[] a, int fromIndex, int toIndex)",
+          "description": "Sorts the specified range of the array into ascending order. The range to be sorted extends from index fromIndex (inclusive) to index toIndex (exclusive).",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] numbers = {5, 2, 8, 1, 9};\nArrays.sort(numbers, 1, 4);\n// numbers: [5, 1, 2, 8, 9] (sorted indices 1-3)"
+        },
+        {
+          "name": "parallelSort",
+          "signature": "static void parallelSort(int[] a)",
+          "description": "Sorts the specified array into ascending numerical order using a parallel sort-merge algorithm. This is typically faster than sequential sort for large arrays.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] largeDataset = new int[10000];\n// ... populate array ...\nArrays.parallelSort(largeDataset);\n// largeDataset: sorted in parallel"
+        },
+        {
+          "name": "binarySearch",
+          "signature": "static int binarySearch(int[] a, int key)",
+          "description": "Searches the specified array for the specified value using the binary search algorithm. The array must be sorted prior to making this call. Returns the index of the search key if found, otherwise (-(insertion point) - 1).",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "int[] ids = {101, 105, 110, 115, 120};\nint index = Arrays.binarySearch(ids, 110);\n// index: 2"
+        },
+        {
+          "name": "binarySearch",
+          "signature": "static int binarySearch(Object[] a, Object key)",
+          "description": "Searches the specified array for the specified object using the binary search algorithm. The array must be sorted into ascending order according to the natural ordering of its elements.",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "String[] cities = {\"Boston\", \"Chicago\", \"Denver\", \"Seattle\"};\nint pos = Arrays.binarySearch(cities, \"Denver\");\n// pos: 2"
+        },
+        {
+          "name": "equals",
+          "signature": "static boolean equals(int[] a, int[] a2)",
+          "description": "Returns true if the two specified arrays are equal to one another. Two arrays are considered equal if both arrays contain the same number of elements, and all corresponding pairs of elements are equal.",
+          "returnType": "boolean",
+          "origin": "Arrays Utility",
+          "example": "int[] array1 = {1, 2, 3};\nint[] array2 = {1, 2, 3};\nboolean same = Arrays.equals(array1, array2);\n// same: true"
+        },
+        {
+          "name": "deepEquals",
+          "signature": "static boolean deepEquals(Object[] a1, Object[] a2)",
+          "description": "Returns true if the two specified arrays are deeply equal to one another. This method is appropriate for use with nested arrays of arbitrary depth.",
+          "returnType": "boolean",
+          "origin": "Arrays Utility",
+          "example": "int[][] matrix1 = {{1, 2}, {3, 4}};\nint[][] matrix2 = {{1, 2}, {3, 4}};\nboolean same = Arrays.deepEquals(matrix1, matrix2);\n// same: true"
+        },
+        {
+          "name": "compare",
+          "signature": "static int compare(int[] a, int[] b)",
+          "description": "Compares two arrays lexicographically. Returns a negative integer, zero, or a positive integer as the first array is less than, equal to, or greater than the second array.",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "int[] version1 = {1, 0, 5};\nint[] version2 = {1, 0, 3};\nint result = Arrays.compare(version1, version2);\n// result: positive (version1 > version2)"
+        },
+        {
+          "name": "mismatch",
+          "signature": "static int mismatch(int[] a, int[] b)",
+          "description": "Finds and returns the index of the first mismatch between two arrays, otherwise returns -1 if no mismatch is found. Arrays are considered to mismatch if they have different lengths or if at least one pair of corresponding elements differs.",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "int[] data1 = {1, 2, 3, 4};\nint[] data2 = {1, 2, 5, 4};\nint index = Arrays.mismatch(data1, data2);\n// index: 2 (first difference)"
+        },
+        {
+          "name": "copyOf",
+          "signature": "static int[] copyOf(int[] original, int newLength)",
+          "description": "Copies the specified array, truncating or padding with zeros (if necessary) so the copy has the specified length. For all indices that are valid in both the original array and the copy, the two arrays will contain identical values.",
+          "returnType": "int[]",
+          "origin": "Arrays Utility",
+          "example": "int[] original = {1, 2, 3};\nint[] extended = Arrays.copyOf(original, 5);\n// extended: [1, 2, 3, 0, 0]"
+        },
+        {
+          "name": "copyOfRange",
+          "signature": "static int[] copyOfRange(int[] original, int from, int to)",
+          "description": "Copies the specified range of the specified array into a new array. The initial index of the range (from) must lie between zero and original.length, inclusive. The final index (to) is exclusive.",
+          "returnType": "int[]",
+          "origin": "Arrays Utility",
+          "example": "int[] numbers = {10, 20, 30, 40, 50};\nint[] middle = Arrays.copyOfRange(numbers, 1, 4);\n// middle: [20, 30, 40]"
+        },
+        {
+          "name": "fill",
+          "signature": "static void fill(int[] a, int val)",
+          "description": "Assigns the specified value to each element of the specified array. This is useful for initializing or resetting arrays.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] slots = new int[5];\nArrays.fill(slots, 100);\n// slots: [100, 100, 100, 100, 100]"
+        },
+        {
+          "name": "fill",
+          "signature": "static void fill(int[] a, int fromIndex, int toIndex, int val)",
+          "description": "Assigns the specified value to each element of the specified range of the specified array. The range to be filled extends from index fromIndex (inclusive) to index toIndex (exclusive).",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] data = {1, 2, 3, 4, 5};\nArrays.fill(data, 1, 4, 0);\n// data: [1, 0, 0, 0, 5]"
+        },
+        {
+          "name": "setAll",
+          "signature": "static void setAll(int[] array, IntUnaryOperator generator)",
+          "description": "Set all elements of the specified array using the provided generator function to compute each element. The generator function receives the index of the element being set.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] squares = new int[5];\nArrays.setAll(squares, i -> i * i);\n// squares: [0, 1, 4, 9, 16]"
+        },
+        {
+          "name": "toString",
+          "signature": "static String toString(int[] a)",
+          "description": "Returns a string representation of the contents of the specified array. The string representation consists of a list of the array's elements, enclosed in square brackets.",
+          "returnType": "String",
+          "origin": "Arrays Utility",
+          "example": "int[] numbers = {1, 2, 3};\nString str = Arrays.toString(numbers);\n// str: \"[1, 2, 3]\""
+        },
+        {
+          "name": "deepToString",
+          "signature": "static String deepToString(Object[] a)",
+          "description": "Returns a string representation of the deep contents of the specified array. This method is designed for converting multidimensional arrays to strings.",
+          "returnType": "String",
+          "origin": "Arrays Utility",
+          "example": "int[][] matrix = {{1, 2}, {3, 4}};\nString str = Arrays.deepToString(matrix);\n// str: \"[[1, 2], [3, 4]]\""
+        },
+        {
+          "name": "asList",
+          "signature": "static <T> List<T> asList(T... a)",
+          "description": "Returns a fixed-size list backed by the specified array. Changes to the returned list write through to the array. This method acts as bridge between array-based and collection-based APIs.",
+          "returnType": "List<T>",
+          "origin": "Arrays Utility",
+          "example": "String[] array = {\"Java\", \"Python\", \"JavaScript\"};\nList<String> list = Arrays.asList(array);\n// list: [Java, Python, JavaScript]"
+        },
+        {
+          "name": "stream",
+          "signature": "static IntStream stream(int[] array)",
+          "description": "Returns a sequential IntStream with the specified array as its source. This allows you to use stream operations on arrays.",
+          "returnType": "IntStream",
+          "origin": "Arrays Utility",
+          "example": "int[] numbers = {1, 2, 3, 4, 5};\nint sum = Arrays.stream(numbers).sum();\n// sum: 15"
+        },
+        {
+          "name": "stream",
+          "signature": "static IntStream stream(int[] array, int startInclusive, int endExclusive)",
+          "description": "Returns a sequential IntStream with the specified range of the specified array as its source. The range extends from startInclusive to endExclusive.",
+          "returnType": "IntStream",
+          "origin": "Arrays Utility",
+          "example": "int[] data = {10, 20, 30, 40, 50};\nint sum = Arrays.stream(data, 1, 4).sum();\n// sum: 90 (20 + 30 + 40)"
+        },
+        {
+          "name": "hashCode",
+          "signature": "static int hashCode(int[] a)",
+          "description": "Returns a hash code based on the contents of the specified array. For any two arrays a and b such that Arrays.equals(a, b), it is also the case that Arrays.hashCode(a) == Arrays.hashCode(b).",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "int[] data = {1, 2, 3};\nint hash = Arrays.hashCode(data);\n// hash: computed hash value"
+        },
+        {
+          "name": "deepHashCode",
+          "signature": "static int deepHashCode(Object[] a)",
+          "description": "Returns a hash code based on the deep contents of the specified array. This method is useful for computing hash codes for nested arrays.",
+          "returnType": "int",
+          "origin": "Arrays Utility",
+          "example": "int[][] matrix = {{1, 2}, {3, 4}};\nint hash = Arrays.deepHashCode(matrix);\n// hash: computed deep hash value"
+        },
+        {
+          "name": "parallelPrefix",
+          "signature": "static void parallelPrefix(int[] array, IntBinaryOperator op)",
+          "description": "Cumulates, in parallel, each element of the given array in place, using the supplied function. For example, if the array initially holds [2, 1, 0, 3] and the operation performs addition, the array holds [2, 3, 3, 6] upon return.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] values = {1, 2, 3, 4};\nArrays.parallelPrefix(values, (a, b) -> a + b);\n// values: [1, 3, 6, 10] (cumulative sum)"
+        },
+        {
+          "name": "parallelSetAll",
+          "signature": "static void parallelSetAll(int[] array, IntUnaryOperator generator)",
+          "description": "Set all elements of the specified array in parallel, using the provided generator function to compute each element. The generator receives the index of the element being set.",
+          "returnType": "void",
+          "origin": "Arrays Utility",
+          "example": "int[] powers = new int[5];\nArrays.parallelSetAll(powers, i -> (int) Math.pow(2, i));\n// powers: [1, 2, 4, 8, 16]"
         }
       ]
     }
